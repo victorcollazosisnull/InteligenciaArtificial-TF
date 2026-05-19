@@ -3,6 +3,7 @@
 public class VisionSensor : MonoBehaviour
 {
     private Blackboard blackboard;
+    private AICharacterBase ownerAI;
 
     [Header("Values Sensor")]
     public float distance = 10f;
@@ -40,6 +41,7 @@ public class VisionSensor : MonoBehaviour
 
     private void Awake()
     {
+        ownerAI = GetComponent<AICharacterBase>();
         blackboard = GetComponent<Blackboard>();
     }
     void Start()
@@ -98,7 +100,7 @@ public class VisionSensor : MonoBehaviour
             // AICHARACTERBASE
             AICharacterBase ai = _colliders[i].GetComponent<AICharacterBase>();
 
-            if (ai != null && ai.gameObject != gameObject && IsInSight(_colliders[i]))
+            if (ai != null && ai.gameObject != gameObject && ai.faction != ownerAI.faction && IsInSight(_colliders[i]))
             {
                 ViewPlayer = ai.transform;
 
