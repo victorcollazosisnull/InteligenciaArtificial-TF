@@ -1,6 +1,7 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 
+[TaskCategory("MY_AI / Attack")]
 public class IsTargetInAttackRange : Conditional
 {
     public float attackRange = 2f;

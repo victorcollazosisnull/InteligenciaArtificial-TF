@@ -1,6 +1,7 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 
+[TaskCategory("MY_AI / Attack")]
 public class AttackTarget : Action
 {
     public float damage = 10f;

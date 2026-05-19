@@ -20,16 +20,21 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(440,151)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.5,140.2857)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-450.783783,181.270157)"},"ID":2,"Name":"Sequence
-        Attack","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-151.225159,136.169418)"},"ID":3,"Name":"Enemy
-        Visible","Instant":true},{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-2.682044,156.680191)"},"ID":4,"Name":"Is
-        Target In Attack Range","Instant":true,"SingleattackRange":2},{"Type":"AttackTarget","NodeData":{"Offset":"(149.86821,144.777924)"},"ID":5,"Name":"Attack
-        Target","Instant":true,"Singledamage":10,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-78.7897644,180.489792)"},"ID":6,"Name":"Sequence
-        Chase","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-94.25019,138.435089)"},"ID":7,"Name":"Enemy
-        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(98.94314,144.3444)"},"ID":8,"Name":"Move
-        To Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(212.935623,184.557678)"},"ID":9,"Name":"Sequence
-        Search","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(-2.026967,137.756577)"},"ID":10,"Name":"Move
-        To Last Known Position","Instant":true,"SinglesearchDuration":2}]},{"Type":"Patrol","NodeData":{"Offset":"(438.578766,188.026733)"},"ID":11,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(440,151)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.5,140.2857)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-730.9944,164.6371)"},"ID":2,"Name":"Sequence
+        Attack","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-151.225159,151.794418)"},"ID":3,"Name":"Enemy
+        Visible","Instant":true},{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-2.682044,172.305191)"},"ID":4,"Name":"Is
+        Target In Attack Range","Instant":true,"SingleattackRange":2},{"Type":"AttackTarget","NodeData":{"Offset":"(149.86821,160.402924)"},"ID":5,"Name":"Attack
+        Target","Instant":true,"Singledamage":10,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-226.07074,157.718216)"},"ID":6,"Name":"Sequence
+        Hunger ","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-196.117172,160.157623)"},"ID":7,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-71.43284,164.464478)"},"ID":8,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(66.66234,160.893)"},"ID":9,"Name":"Move
+        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(194.612946,159.028076)"},"ID":10,"Name":"Eat
+        Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(210.683685,180.489792)"},"ID":11,"Name":"Sequence
+        Chase","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-94.25019,138.435089)"},"ID":12,"Name":"Enemy
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(98.94314,144.3444)"},"ID":13,"Name":"Move
+        To Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(520.927551,184.557678)"},"ID":14,"Name":"Sequence
+        Search","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(-2.026967,137.756577)"},"ID":15,"Name":"Move
+        To Last Known Position","Instant":true,"SinglesearchDuration":2}]},{"Type":"Patrol","NodeData":{"Offset":"(728.0524,188.026733)"},"ID":16,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 
+[TaskCategory("MY_AI / Move")]
 public class MoveToTarget : Action
 {
     private Blackboard blackboard;

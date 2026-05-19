@@ -10,7 +10,9 @@ public class Blackboard : MonoBehaviour
 
     public bool isHungry;
 
-    public float hunger;
+    public float hunger = 0f;
+
+    public Transform foodTarget;
 
     public bool isDead;
 }

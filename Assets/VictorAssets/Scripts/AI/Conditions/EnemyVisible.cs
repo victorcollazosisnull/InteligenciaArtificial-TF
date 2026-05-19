@@ -1,6 +1,7 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
+[TaskCategory("MY_AI / View")]
 public class EnemyVisible : Conditional
 {
     private Blackboard blackboard;
