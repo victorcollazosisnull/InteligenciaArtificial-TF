@@ -6,6 +6,8 @@ public class Blackboard : MonoBehaviour
 
     public Vector3 lastKnownPosition;
 
+    public bool hasLastKnownPosition;
+
     public bool isHungry;
 
     public float hunger;

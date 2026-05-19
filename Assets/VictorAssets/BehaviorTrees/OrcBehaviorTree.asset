@@ -20,9 +20,10 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(440,151)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.5,140.2857)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-183.863632,180.489792)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-157.763672,165.4621)"},"ID":3,"Name":"Enemy
-        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(125.970161,171.371414)"},"ID":4,"Name":"Move
-        To Target","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(198.435547,188.026733)"},"ID":5,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(440,151)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.5,140.2857)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-291.155243,180.489792)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-94.25019,138.435089)"},"ID":3,"Name":"Enemy
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(98.94314,144.3444)"},"ID":4,"Name":"Move
+        To Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0.570192337,184.557678)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(-2.026967,137.756577)"},"ID":6,"Name":"Move
+        To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(226.213287,188.026733)"},"ID":7,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

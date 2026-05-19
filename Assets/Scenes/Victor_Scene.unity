@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Blackboard
   currentTarget: {fileID: 0}
   lastKnownPosition: {x: 0, y: 0, z: 0}
+  hasLastKnownPosition: 0
   isHungry: 0
   hunger: 0
   isDead: 0
@@ -961,8 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4065af693b8183e4fb474340010662b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VisionSensor
-  distance: 20
-  angle: 70
+  distance: 17.4
+  angle: 61.6
   height: 1
   scanFrequency: 30
   enemyLayers:
@@ -990,6 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Blackboard
   currentTarget: {fileID: 0}
   lastKnownPosition: {x: 0, y: 0, z: 0}
+  hasLastKnownPosition: 0
   isHungry: 0
   hunger: 0
   isDead: 0

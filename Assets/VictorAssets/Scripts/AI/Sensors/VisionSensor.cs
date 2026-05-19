@@ -2,73 +2,42 @@
 
 public class VisionSensor : MonoBehaviour
 {
-    // ── Configuración de visión ──────────────────────────────────────────────
     private Blackboard blackboard;
 
-    // Distancia máxima de detección del sensor (en unidades de Unity)
+    [Header("Values Sensor")]
     public float distance = 10f;
-
-    // Ángulo del cono de visión (limitado entre 0 y 180 grados en el Inspector)
-    [Range(0, 180)]
-    public float angle = 30f;
-
-    // Altura del campo de visión (rango vertical que puede detectar)
+    [Range(0, 180)] public float angle = 30f;
     public float height = 1.0f;
-
     // Número de escaneos por segundo
     public int scanFrequency = 30;
 
-    // Máscara de capas que define qué objetos se consideran enemigos/detectables
+    [Header("Layers")]
     public LayerMask enemyLayers;
-
-    // Máscara de capas que define qué objetos bloquean la línea de visión
     public LayerMask occlusionLayers;
 
-    // ── Estado de detección ──────────────────────────────────────────────────
-
-    // Transform del jugador detectado; solo esta clase puede asignarlo (setter privado)
+    [Header("Transforms")]
     public Transform ViewPlayer;
-
-    // Transform del punto de movimiento auxiliar; solo esta clase puede asignarlo
     public Transform positionEye;
 
-    // ── Gizmos ───────────────────────────────────────────────────────────────
-
-    // Color de la malla de visualización del cono de visión en el editor
-    // Color de la malla cuando no detecta al jugador
+    [Header("Color Gizmos")]
     public Color meshColor = Color.red;
-
-    // Color de la malla cuando detecta al jugador
     public Color detectedColor = Color.green;
-
-    // Activa o desactiva el dibujo de gizmos en la escena
     public bool IsDrawGizmo = false;
 
-    // ── Internals ────────────────────────────────────────────────────────────
-
-    // Malla generada para visualizar el cono de visión en el editor
     Mesh _mesh;
-
     // Intervalo de tiempo entre cada escaneo (calculado a partir de scanFrequency)
     float _scanInterval;
-
     // Temporizador que cuenta hacia abajo hasta el próximo escaneo
     float _scanTimer;
-
     // Cantidad de colliders detectados en el último escaneo
     int _count;
-
     // Array preallocado para almacenar los colliders detectados (evita asignaciones de memoria en runtime)
     readonly Collider[] _colliders = new Collider[50];
-
     // Límite inferior de altura precalculado (valor negativo de height)
     float _halfHeightNeg;
-
     // Límite superior de altura precalculado (valor positivo de height)
     float _halfHeightPos;
 
-    // ────────────────────────────────────────────────────────────────────────
-    // Método llamado una vez al iniciar el componente
     private void Awake()
     {
         blackboard = GetComponent<Blackboard>();
@@ -99,8 +68,6 @@ public class VisionSensor : MonoBehaviour
     // Método llamado cada frame por Unity
     void Update()
     {
-
-
         // Reduce el temporizador con el tiempo transcurrido desde el último frame
         _scanTimer -= Time.deltaTime;
 
@@ -136,6 +103,8 @@ public class VisionSensor : MonoBehaviour
                 ViewPlayer = ai.transform;
 
                 blackboard.currentTarget = ai.transform;
+                blackboard.lastKnownPosition = ai.transform.position;
+                blackboard.hasLastKnownPosition = true;
                 return;
             }          
         }
