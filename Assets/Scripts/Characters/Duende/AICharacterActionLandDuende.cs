@@ -13,8 +13,6 @@ public class AICharacterActionLandDuende : AICharacterCombatLand
     public float attackDamage   = 10f;    // dano al cazar hadas
     public float attackRange    = 1.8f;
 
-    private void Awake() => LoadComponent();
-
     public override void LoadComponent()
     {
         base.LoadComponent();

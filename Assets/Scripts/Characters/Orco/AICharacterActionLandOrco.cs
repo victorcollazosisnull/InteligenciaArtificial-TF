@@ -17,8 +17,6 @@ public class AICharacterActionLandOrco : AICharacterCombatLand
 
     private HealthBase targetHealth;
 
-    private void Awake() => LoadComponent();
-
     public override void LoadComponent()
     {
         base.LoadComponent();

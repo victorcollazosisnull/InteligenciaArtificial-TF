@@ -1,12 +1,14 @@
 // MoveToTarget.cs
-// Mueve al NPC hacia el objetivo actual registrado en el Blackboard.
-// Retorna Failure si no hay objetivo. Running mientras se mueve.
+// FIX: retorna Running hasta llegar AL rango de ataque, no hasta llegar exactamente.
+// Asi el Sequence de ataque no termina y AttackTarget puede ejecutarse.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 [TaskCategory("BosqueEncantado/Move")]
 public class MoveToTarget : ActionNode
 {
+    public float stopDistance = 2.0f;   // distancia a la que para de moverse
+
     private AICharacterActionLand _land;
 
     public override void OnAwake()
@@ -17,10 +19,31 @@ public class MoveToTarget : ActionNode
 
     public override TaskStatus OnUpdate()
     {
-        if (_land == null || _Blackboard == null) return TaskStatus.Failure;
-        if (_Blackboard.currentTarget == null)    return TaskStatus.Failure;
+        if (_land == null) return TaskStatus.Failure;
 
-        _land.MoveTo(_Blackboard.currentTarget.position);
+        // Prioridad 1: usa currentTarget del Blackboard
+        Transform target = null;
+        if (_Blackboard != null && _Blackboard.currentTarget != null)
+            target = _Blackboard.currentTarget;
+        // Prioridad 2: usa Enemy de AIEyeNPC directamente
+        else if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
+            target = _AIEyeNPC.Enemy;
+
+        if (target == null)
+        {
+            _land.StopMoving();
+            return TaskStatus.Failure;
+        }
+
+        float dist = Vector3.Distance(transform.position, target.position);
+
+        if (dist <= stopDistance)
+        {
+            _land.StopMoving();
+            return TaskStatus.Success;   // llegó, AttackTarget puede ejecutarse
+        }
+
+        _land.MoveTo(target.position);
         return TaskStatus.Running;
     }
 }

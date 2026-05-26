@@ -1,6 +1,6 @@
 // AttackTarget.cs
-// Llama al metodo Attack() del NPC segun el cooldown configurado.
-// El NPC concreto (Orco, Duende, Cazador) define como ataca.
+// FIX: retorna Running en loop mientras el enemigo este visible,
+// no Success, para que el Sequence no termine y el Selector no reinicie.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ using UnityEngine;
 public class AttackTarget : ActionNode
 {
     public float attackCooldown = 1.5f;
-    private float timer;
+    private float _timer;
 
     private AICharacterCombatLand _combat;
 
@@ -20,20 +20,31 @@ public class AttackTarget : ActionNode
 
     public override void OnStart()
     {
-        timer = 0f;
+        _timer = 0f;  // ataca de inmediato al entrar
     }
 
     public override TaskStatus OnUpdate()
     {
-        if (_combat == null || _AIEyeNPC == null) return TaskStatus.Failure;
-        if (_AIEyeNPC.Enemy == null)              return TaskStatus.Failure;
+        if (_combat == null) return TaskStatus.Failure;
 
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        // Busca el enemigo por las dos vias
+        Transform enemy = null;
+        if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
+            enemy = _AIEyeNPC.Enemy;
+        else if (_Blackboard != null && _Blackboard.currentTarget != null)
+            enemy = _Blackboard.currentTarget;
+
+        // Si perdió al enemigo, termina el Sequence para que el Selector evalúe de nuevo
+        if (enemy == null) return TaskStatus.Failure;
+
+        _timer -= Time.deltaTime;
+        if (_timer <= 0f)
         {
             _combat.Attack();
-            timer = attackCooldown;
+            _timer = attackCooldown;
         }
+
+        // Running = sigue en este nodo mientras tenga enemigo
         return TaskStatus.Running;
     }
 }

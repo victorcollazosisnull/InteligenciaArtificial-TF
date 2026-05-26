@@ -1,14 +1,19 @@
-// HasTarget.cs
-// Retorna Success si el Blackboard tiene un objetivo activo.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 [TaskCategory("BosqueEncantado/Condition")]
-public class HasTarget : ActionNode
+public class HasTarget : Conditional
 {
+    private Blackboard _blackboard;
+
+    public override void OnAwake()
+    {
+        _blackboard = GetComponent<Blackboard>();
+    }
+
     public override TaskStatus OnUpdate()
     {
-        if (_Blackboard == null || _Blackboard.currentTarget == null)
+        if (_blackboard == null || _blackboard.currentTarget == null)
             return TaskStatus.Failure;
         return TaskStatus.Success;
     }

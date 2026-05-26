@@ -8,6 +8,10 @@ public class AICharacterControl : MonoBehaviour
 {
     protected AIEyeNPC aIEyeNPC;
     public    AIEyeNPC AIEyeNPC => aIEyeNPC;
+    protected virtual void Awake()
+    {
+        LoadComponent();
+    }
 
     public virtual void LoadComponent()
     {

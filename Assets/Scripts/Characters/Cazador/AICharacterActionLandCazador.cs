@@ -22,7 +22,6 @@ public class AICharacterActionLandCazador : AICharacterCombatLand
 
     private Blackboard blackboard;
 
-    private void Awake() => LoadComponent();
 
     public override void LoadComponent()
     {
