@@ -1,35 +1,37 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Food")]
-public class MoveToFood : Action
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-
-    private MovementController movement;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Food")]
+    public class MoveToFood : Action
     {
-        blackboard = GetComponent<Blackboard>();
+        private Blackboard blackboard;
 
-        movement = GetComponent<MovementController>();
-    }
+        private MovementController movement;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (blackboard.foodTarget == null)
+        public override void OnAwake()
         {
-            return TaskStatus.Failure;
+            blackboard = GetComponent<Blackboard>();
+
+            movement = GetComponent<MovementController>();
         }
 
-        movement.MoveTo(
-            blackboard.foodTarget.position);
-
-        if (movement.HasReachedDestination())
+        public override TaskStatus OnUpdate()
         {
-            return TaskStatus.Success;
-        }
+            if (blackboard.foodTarget == null)
+            {
+                return TaskStatus.Failure;
+            }
 
-        return TaskStatus.Running;
+            movement.MoveTo(
+                blackboard.foodTarget.position);
+
+            if (movement.HasReachedDestination())
+            {
+                return TaskStatus.Success;
+            }
+
+            return TaskStatus.Running;
+        }
     }
 }

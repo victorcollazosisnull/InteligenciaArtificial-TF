@@ -1,27 +1,29 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Move")]
-public class MoveToTarget : Action
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-    private MovementController movement;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Move")]
+    public class MoveToTarget : Action
     {
-        blackboard = GetComponent<Blackboard>();
-        movement = GetComponent<MovementController>();
-    }
+        private Blackboard blackboard;
+        private MovementController movement;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (blackboard.currentTarget == null)
+        public override void OnAwake()
         {
-            return TaskStatus.Failure;
+            blackboard = GetComponent<Blackboard>();
+            movement = GetComponent<MovementController>();
         }
 
-        movement.MoveTo(blackboard.currentTarget.position);
+        public override TaskStatus OnUpdate()
+        {
+            if (blackboard.currentTarget == null)
+            {
+                return TaskStatus.Failure;
+            }
 
-        return TaskStatus.Running;
+            movement.MoveTo(blackboard.currentTarget.position);
+
+            return TaskStatus.Running;
+        }
     }
 }

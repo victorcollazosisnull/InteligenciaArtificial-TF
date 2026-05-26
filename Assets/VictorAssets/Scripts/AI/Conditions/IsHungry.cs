@@ -1,18 +1,20 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Food")]
-public class IsHungry : Conditional
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Food")]
+    public class IsHungry : Conditional
     {
-        blackboard = GetComponent<Blackboard>();
-    }
+        private Blackboard blackboard;
 
-    public override TaskStatus OnUpdate()
-    {
-        return blackboard.isHungry ? TaskStatus.Success : TaskStatus.Failure;
+        public override void OnAwake()
+        {
+            blackboard = GetComponent<Blackboard>();
+        }
+
+        public override TaskStatus OnUpdate()
+        {
+            return blackboard.isHungry ? TaskStatus.Success : TaskStatus.Failure;
+        }
     }
 }

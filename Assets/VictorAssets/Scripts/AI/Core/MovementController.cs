@@ -1,36 +1,38 @@
 using UnityEngine;
 using UnityEngine.AI;
-
-public class MovementController : MonoBehaviour
+namespace oldStructureVictorGozu
 {
-    private NavMeshAgent agent;
-
-    private void Awake()
+    public class MovementController : MonoBehaviour
     {
-        agent = GetComponent<NavMeshAgent>();
-    }
+        private NavMeshAgent agent;
 
-    public void MoveTo(Vector3 targetPosition)
-    {
-        if (agent == null || !agent.isOnNavMesh)
-            return;
+        private void Awake()
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
 
-        agent.SetDestination(targetPosition);
-    }
+        public void MoveTo(Vector3 targetPosition)
+        {
+            if (agent == null || !agent.isOnNavMesh)
+                return;
 
-    public void StopMoving()
-    {
-        if (agent == null)
-            return;
+            agent.SetDestination(targetPosition);
+        }
 
-        agent.ResetPath();
-    }
+        public void StopMoving()
+        {
+            if (agent == null)
+                return;
 
-    public bool HasReachedDestination()
-    {
-        if (agent.pathPending)
-            return false;
+            agent.ResetPath();
+        }
 
-        return agent.remainingDistance <= agent.stoppingDistance;
+        public bool HasReachedDestination()
+        {
+            if (agent.pathPending)
+                return false;
+
+            return agent.remainingDistance <= agent.stoppingDistance;
+        }
     }
 }

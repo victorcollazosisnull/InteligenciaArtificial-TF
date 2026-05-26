@@ -1,31 +1,33 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Attack")]
-public class IsTargetInAttackRange : Conditional
+namespace oldStructureVictorGozu
 {
-    public float attackRange = 2f;
-
-    private VisionSensor vision;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Attack")]
+    public class IsTargetInAttackRange : Conditional
     {
-        vision = GetComponent<VisionSensor>();
-    }
+        public float attackRange = 2f;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (vision.ViewPlayer == null)
+        private VisionSensor vision;
+
+        public override void OnAwake()
         {
-            return TaskStatus.Failure;
+            vision = GetComponent<VisionSensor>();
         }
 
-        float distance = Vector3.Distance(
-            transform.position,
-            vision.ViewPlayer.position);
+        public override TaskStatus OnUpdate()
+        {
+            if (vision.ViewPlayer == null)
+            {
+                return TaskStatus.Failure;
+            }
 
-        return distance <= attackRange
-            ? TaskStatus.Success
-            : TaskStatus.Failure;
+            float distance = Vector3.Distance(
+                transform.position,
+                vision.ViewPlayer.position);
+
+            return distance <= attackRange
+                ? TaskStatus.Success
+                : TaskStatus.Failure;
+        }
     }
 }

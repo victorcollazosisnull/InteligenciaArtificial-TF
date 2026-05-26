@@ -1,6 +1,8 @@
 using UnityEngine;
-
-public class Flee : MonoBehaviour
+namespace oldStructureVictorGozu
 {
-    
+    public class Flee : MonoBehaviour
+    {
+
+    }
 }

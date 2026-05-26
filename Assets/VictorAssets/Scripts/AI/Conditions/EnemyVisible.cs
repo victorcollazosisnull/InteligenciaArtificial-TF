@@ -1,23 +1,25 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
-
-[TaskCategory("MY_AI / View")]
-public class EnemyVisible : Conditional
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / View")]
+    public class EnemyVisible : Conditional
     {
-        blackboard = GetComponent<Blackboard>();
-    }
+        private Blackboard blackboard;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (blackboard.currentTarget != null)
+        public override void OnAwake()
         {
-            return TaskStatus.Success;
+            blackboard = GetComponent<Blackboard>();
         }
 
-        return TaskStatus.Failure;
+        public override TaskStatus OnUpdate()
+        {
+            if (blackboard.currentTarget != null)
+            {
+                return TaskStatus.Success;
+            }
+
+            return TaskStatus.Failure;
+        }
     }
 }

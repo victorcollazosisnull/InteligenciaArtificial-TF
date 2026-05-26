@@ -1,43 +1,45 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Move")]
-public class Patrol : Action
+namespace oldStructureVictorGozu
 {
-    private MovementController movement;
-
-    public float patrolRadius = 10f;
-
-    private Vector3 randomPoint;
-
-    public override void OnStart()
+    [TaskCategory("MY_AI / Move")]
+    public class Patrol : Action
     {
-        movement = GetComponent<MovementController>();
+        private MovementController movement;
 
-        GenerateNewPoint();
-    }
+        public float patrolRadius = 10f;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (movement.HasReachedDestination())
+        private Vector3 randomPoint;
+
+        public override void OnStart()
         {
+            movement = GetComponent<MovementController>();
+
             GenerateNewPoint();
         }
 
-        return TaskStatus.Running;
-    }
+        public override TaskStatus OnUpdate()
+        {
+            if (movement.HasReachedDestination())
+            {
+                GenerateNewPoint();
+            }
 
-    void GenerateNewPoint()
-    {
-        Vector3 randomDirection =
-            Random.insideUnitSphere * patrolRadius;
+            return TaskStatus.Running;
+        }
 
-        randomDirection += transform.position;
+        void GenerateNewPoint()
+        {
+            Vector3 randomDirection =
+                Random.insideUnitSphere * patrolRadius;
 
-        randomDirection.y = transform.position.y;
+            randomDirection += transform.position;
 
-        randomPoint = randomDirection;
+            randomDirection.y = transform.position.y;
 
-        movement.MoveTo(randomPoint);
+            randomPoint = randomDirection;
+
+            movement.MoveTo(randomPoint);
+        }
     }
 }

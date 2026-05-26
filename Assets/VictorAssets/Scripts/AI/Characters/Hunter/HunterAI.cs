@@ -1,11 +1,13 @@
 using UnityEngine;
-
-public class HunterAI : AICharacterBase
+namespace oldStructureVictorGozu
 {
-    protected override void Awake()
+    public class HunterAI : AICharacterBase
     {
-        base.Awake();
+        protected override void Awake()
+        {
+            base.Awake();
 
-        faction = Faction.Hunter;
+            faction = Faction.Hunter;
+        }
     }
 }

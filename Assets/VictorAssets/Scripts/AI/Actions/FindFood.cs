@@ -1,52 +1,54 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Food")]
-public class FindFood : Action
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-
-    public float searchRadius = 20f;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Food")]
+    public class FindFood : Action
     {
-        blackboard = GetComponent<Blackboard>();
-    }
+        private Blackboard blackboard;
 
-    public override TaskStatus OnUpdate()
-    {
-        Collider[] colliders =
-            Physics.OverlapSphere(transform.position, searchRadius);
+        public float searchRadius = 20f;
 
-        float closestDistance = Mathf.Infinity;
-
-        Transform closestFood = null;
-
-        foreach (Collider collider in colliders)
+        public override void OnAwake()
         {
-            Food food = collider.GetComponent<Food>();
+            blackboard = GetComponent<Blackboard>();
+        }
 
-            if (food == null)
-                continue;
+        public override TaskStatus OnUpdate()
+        {
+            Collider[] colliders =
+                Physics.OverlapSphere(transform.position, searchRadius);
 
-            float distance = Vector3.Distance(
-                transform.position,
-                collider.transform.position);
+            float closestDistance = Mathf.Infinity;
 
-            if (distance < closestDistance)
+            Transform closestFood = null;
+
+            foreach (Collider collider in colliders)
             {
-                closestDistance = distance;
-                closestFood = collider.transform;
+                Food food = collider.GetComponent<Food>();
+
+                if (food == null)
+                    continue;
+
+                float distance = Vector3.Distance(
+                    transform.position,
+                    collider.transform.position);
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestFood = collider.transform;
+                }
             }
+
+            if (closestFood != null)
+            {
+                blackboard.foodTarget = closestFood;
+
+                return TaskStatus.Success;
+            }
+
+            return TaskStatus.Failure;
         }
-
-        if (closestFood != null)
-        {
-            blackboard.foodTarget = closestFood;
-
-            return TaskStatus.Success;
-        }
-
-        return TaskStatus.Failure;
     }
 }

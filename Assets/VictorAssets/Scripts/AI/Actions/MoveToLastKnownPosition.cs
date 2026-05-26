@@ -1,60 +1,62 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
-[TaskCategory("MY_AI / Move")]
-public class MoveToLastKnownPosition : Action
+namespace oldStructureVictorGozu
 {
-    private Blackboard blackboard;
-    private MovementController movement;
-
-    private float searchTimer;
-    public float searchDuration = 2f;
-
-    private bool reachedPosition;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Move")]
+    public class MoveToLastKnownPosition : Action
     {
-        blackboard = GetComponent<Blackboard>();
-        movement = GetComponent<MovementController>();
-    }
+        private Blackboard blackboard;
+        private MovementController movement;
 
-    public override void OnStart()
-    {
-        reachedPosition = false;
-        searchTimer = 0f;
+        private float searchTimer;
+        public float searchDuration = 2f;
 
-        if (blackboard.hasLastKnownPosition)
+        private bool reachedPosition;
+
+        public override void OnAwake()
         {
-            movement.MoveTo(blackboard.lastKnownPosition);
-        }
-    }
-
-    public override TaskStatus OnUpdate()
-    {
-        if (!blackboard.hasLastKnownPosition)
-        {
-            return TaskStatus.Failure;
+            blackboard = GetComponent<Blackboard>();
+            movement = GetComponent<MovementController>();
         }
 
-        if (!reachedPosition)
+        public override void OnStart()
         {
-            if (movement.HasReachedDestination())
+            reachedPosition = false;
+            searchTimer = 0f;
+
+            if (blackboard.hasLastKnownPosition)
             {
-                reachedPosition = true;
+                movement.MoveTo(blackboard.lastKnownPosition);
+            }
+        }
+
+        public override TaskStatus OnUpdate()
+        {
+            if (!blackboard.hasLastKnownPosition)
+            {
+                return TaskStatus.Failure;
+            }
+
+            if (!reachedPosition)
+            {
+                if (movement.HasReachedDestination())
+                {
+                    reachedPosition = true;
+                }
+
+                return TaskStatus.Running;
+            }
+
+            searchTimer += Time.deltaTime;
+
+            if (searchTimer >= searchDuration)
+            {
+                blackboard.hasLastKnownPosition = false;
+
+                return TaskStatus.Failure;
             }
 
             return TaskStatus.Running;
         }
-
-        searchTimer += Time.deltaTime;
-
-        if (searchTimer >= searchDuration)
-        {
-            blackboard.hasLastKnownPosition = false;
-
-            return TaskStatus.Failure;
-        }
-
-        return TaskStatus.Running;
     }
 }

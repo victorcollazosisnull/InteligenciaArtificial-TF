@@ -1,11 +1,13 @@
 using UnityEngine;
-
-public class OrcAI : AICharacterBase
+namespace oldStructureVictorGozu
 {
-    protected override void Awake()
+    public class OrcAI : AICharacterBase
     {
-        base.Awake();
+        protected override void Awake()
+        {
+            base.Awake();
 
-        faction = Faction.Orc;
+            faction = Faction.Orc;
+        }
     }
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
-
-public class Food : MonoBehaviour
+namespace oldStructureVictorGozu
 {
-    public float nutritionValue = 40f;
+    public class Food : MonoBehaviour
+    {
+        public float nutritionValue = 40f;
+    }
 }

@@ -1,9 +1,12 @@
-public enum Faction
+namespace oldStructureVictorGozu
 {
-    Orc,
-    Goblin,
-    Hunter,
-    Fairy,
-    Duck,
-    Unicorn
+    public enum Faction
+    {
+        Orc,
+        Goblin,
+        Hunter,
+        Fairy,
+        Duck,
+        Unicorn
+    }
 }

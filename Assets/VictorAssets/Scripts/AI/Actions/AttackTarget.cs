@@ -1,50 +1,53 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 
-[TaskCategory("MY_AI / Attack")]
-public class AttackTarget : Action
+namespace oldStructureVictorGozu
 {
-    public float damage = 10f;
-
-    public float attackCooldown = 1.5f;
-
-    private float timer;
-
-    private VisionSensor vision;
-
-    public override void OnAwake()
+    [TaskCategory("MY_AI / Attack")]
+    public class AttackTarget : Action
     {
-        vision = GetComponent<VisionSensor>();
-    }
+        public float damage = 10f;
 
-    public override void OnStart()
-    {
-        timer = 0f;
-    }
+        public float attackCooldown = 1.5f;
 
-    public override TaskStatus OnUpdate()
-    {
-        if (vision.ViewPlayer == null)
+        private float timer;
+
+        private VisionSensor vision;
+
+        public override void OnAwake()
         {
-            return TaskStatus.Failure;
+            vision = GetComponent<VisionSensor>();
         }
 
-        timer -= Time.deltaTime;
-
-        if (timer <= 0f)
+        public override void OnStart()
         {
-            Health health = vision.ViewPlayer.GetComponent<Health>();
+            timer = 0f;
+        }
 
-            if (health != null)
+        public override TaskStatus OnUpdate()
+        {
+            if (vision.ViewPlayer == null)
             {
-                health.TakeDamage(damage);
-
-                Debug.Log("Orco atacó a " + vision.ViewPlayer.name);
+                return TaskStatus.Failure;
             }
 
-            timer = attackCooldown;
-        }
+            timer -= Time.deltaTime;
 
-        return TaskStatus.Running;
+            if (timer <= 0f)
+            {
+                Health health = vision.ViewPlayer.GetComponent<Health>();
+
+                if (health != null)
+                {
+                    health.TakeDamage(damage);
+
+                    Debug.Log("Orco atacó a " + vision.ViewPlayer.name);
+                }
+
+                timer = attackCooldown;
+            }
+
+            return TaskStatus.Running;
+        }
     }
 }

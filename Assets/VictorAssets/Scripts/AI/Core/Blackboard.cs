@@ -1,18 +1,20 @@
 using UnityEngine;
-
-public class Blackboard : MonoBehaviour
+namespace oldStructureVictorGozu
 {
-    public Transform currentTarget;
+    public class Blackboard : MonoBehaviour
+    {
+        public Transform currentTarget;
 
-    public Vector3 lastKnownPosition;
+        public Vector3 lastKnownPosition;
 
-    public bool hasLastKnownPosition;
+        public bool hasLastKnownPosition;
 
-    public bool isHungry;
+        public bool isHungry;
 
-    public float hunger = 0f;
+        public float hunger = 0f;
 
-    public Transform foodTarget;
+        public Transform foodTarget;
 
-    public bool isDead;
+        public bool isDead;
+    }
 }
