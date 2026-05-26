@@ -184,6 +184,7 @@ MonoBehaviour:
   angle: 45
   height: 1
   scanFrequency: 20
+  memoryTime: 3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -509,6 +510,7 @@ MonoBehaviour:
   angle: 66
   height: 0.5
   scanFrequency: 20
+  memoryTime: 3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -922,6 +924,7 @@ MonoBehaviour:
   angle: 60
   height: 1.7
   scanFrequency: 20
+  memoryTime: 3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -2466,6 +2469,7 @@ MonoBehaviour:
   angle: 60
   height: 1
   scanFrequency: 20
+  memoryTime: 3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -3095,6 +3099,7 @@ MonoBehaviour:
   angle: 90
   height: 1.5
   scanFrequency: 20
+  memoryTime: 3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
