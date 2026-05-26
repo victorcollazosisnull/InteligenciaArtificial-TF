@@ -44,6 +44,6 @@ public class EatFood : ActionNode
             land.StopMoving();
 
         Debug.Log($"[{gameObject.name}] comió y vuelve a patrullar.");
-        return TaskStatus.Success;
+        return TaskStatus.Failure; // ACA ESTABA EL ERROR TODO EL TIEMPO, SI DEVOLVIA SUCCESS, EL SELECTOR NO REEVALUABA Y EL NPC SE QUEDABA COMIENDO INFINITAMENTE
     }
 }

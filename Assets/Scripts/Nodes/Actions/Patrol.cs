@@ -43,11 +43,11 @@ public class Patrol : ActionNode
 
         NavMeshHit hit;
 
-        if (UnityEngine.AI.NavMesh.SamplePosition(
+        if (NavMesh.SamplePosition(
             randomDirection,
             out hit,
             patrolRadius,
-            UnityEngine.AI.NavMesh.AllAreas))
+            NavMesh.AllAreas))
         {
             _land.MoveTo(hit.position);
 
