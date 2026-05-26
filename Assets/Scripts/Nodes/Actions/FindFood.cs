@@ -35,6 +35,7 @@ public class FindFood : ActionNode
             _Blackboard.foodTarget = closestFood;
             return TaskStatus.Success;
         }
+        _Blackboard.foodTarget = null;
         return TaskStatus.Failure;
     }
 }

@@ -12,7 +12,7 @@ public class HealthIALand : HealthCombat
     public    NavMeshAgent Agent => agent;
 
     // ── INICIALIZACION ───────────────────────────────────
-    private void Awake() => LoadComponent();
+    //private void Awake() => LoadComponent();
 
     public override void LoadComponent()
     {

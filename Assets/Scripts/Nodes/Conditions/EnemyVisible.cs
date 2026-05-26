@@ -1,15 +1,15 @@
-// EnemyVisible.cs
-// Retorna Success si AIEyeNPC tiene un enemigo detectado.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 [TaskCategory("BosqueEncantado/Condition")]
-public class EnemyVisible : ActionNode
+public class EnemyVisible : ConditionNode
 {
     public override TaskStatus OnUpdate()
     {
-        if (_AIEyeNPC == null || _AIEyeNPC.Enemy == null)
-            return TaskStatus.Failure;
-        return TaskStatus.Success;
+        if (_Blackboard != null && _Blackboard.currentTarget != null)
+            return TaskStatus.Success;
+        if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
+            return TaskStatus.Success;
+        return TaskStatus.Failure;
     }
 }

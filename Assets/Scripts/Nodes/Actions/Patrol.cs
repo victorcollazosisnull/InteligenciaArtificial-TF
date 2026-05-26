@@ -1,8 +1,9 @@
 // Patrol.cs
-// Mueve al NPC a puntos aleatorios dentro de un radio definido.
-// Usado por: Orco (patrulla zona), Cazador (recorre el bosque).
+// FIX: genera un nuevo punto cada vez que OnStart() es llamado,
+// así el NPC retoma la patrulla correctamente después de comer o atacar.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 
 [TaskCategory("BosqueEncantado/Move")]
 public class Patrol : ActionNode
@@ -17,24 +18,40 @@ public class Patrol : ActionNode
         _land = GetComponent<AICharacterActionLand>();
     }
 
+    // OnStart se llama cada vez que el nodo se activa (no solo la primera vez)
     public override void OnStart()
     {
+        Debug.Log("PATRULLANDO OTRA VEZ");
+        _land.StopMoving();
         GenerateNewPoint();
     }
 
     public override TaskStatus OnUpdate()
     {
         if (_land == null) return TaskStatus.Failure;
+
         if (_land.HasReachedDestination())
             GenerateNewPoint();
+
         return TaskStatus.Running;
     }
 
     void GenerateNewPoint()
     {
-        Vector3 dir = Random.insideUnitSphere * patrolRadius;
-        dir += transform.position;
-        dir.y = transform.position.y;
-        _land.MoveTo(dir);
+        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+        randomDirection += transform.position;
+
+        NavMeshHit hit;
+
+        if (NavMesh.SamplePosition(
+            randomDirection,
+            out hit,
+            patrolRadius,
+            NavMesh.AllAreas))
+        {
+            _land.MoveTo(hit.position);
+
+            Debug.Log($"[{gameObject.name}] nuevo punto patrol: {hit.position}");
+        }
     }
 }

@@ -28,7 +28,13 @@ public class HungerSystem : MonoBehaviour
     /// <summary>Reduce el hambre al comer (llamado por EatFood).</summary>
     public void Feed(float nutritionValue)
     {
-        blackboard.hunger   = Mathf.Max(0f, blackboard.hunger - nutritionValue);
-        blackboard.isHungry = blackboard.hunger >= hungryThreshold;
+        blackboard.hunger =
+        Mathf.Max(0f, blackboard.hunger - nutritionValue);
+
+        blackboard.isHungry =
+            blackboard.hunger >= hungryThreshold;
+
+        Debug.Log("Hambre despues de comer: " + blackboard.hunger);
+        Debug.Log("isHungry despues de comer: " + blackboard.isHungry);
     }
 }
