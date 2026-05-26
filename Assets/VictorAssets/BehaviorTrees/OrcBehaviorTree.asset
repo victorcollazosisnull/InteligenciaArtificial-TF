@@ -32,7 +32,7 @@ MonoBehaviour:
         Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(210.683685,180.489792)"},"ID":11,"Name":"Sequence
         Chase","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-94.25019,138.435089)"},"ID":12,"Name":"Enemy
         Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(98.94314,144.3444)"},"ID":13,"Name":"Move
-        To Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(520.927551,184.557678)"},"ID":14,"Name":"Sequence
+        To Target","Instant":true,"SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(520.927551,184.557678)"},"ID":14,"Name":"Sequence
         Search","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(-2.026967,137.756577)"},"ID":15,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(728.0524,188.026733)"},"ID":16,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
       fieldSerializationData:

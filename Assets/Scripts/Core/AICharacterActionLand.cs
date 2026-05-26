@@ -22,7 +22,11 @@ public class AICharacterActionLand : AICharacterActions
     public void MoveTo(Vector3 destination)
     {
         if (agent != null && agent.isOnNavMesh)
-            agent.SetDestination(destination);
+        {
+            bool success = agent.SetDestination(destination);
+
+            Debug.Log($"MoveTo -> {destination} | success: {success}");
+        }
     }
 
     public void StopMoving()
@@ -33,7 +37,17 @@ public class AICharacterActionLand : AICharacterActions
 
     public bool HasReachedDestination()
     {
-        if (agent == null || agent.pathPending) return false;
-        return agent.remainingDistance <= agent.stoppingDistance;
+        if (agent == null) return false;
+
+        if (agent.pathPending)
+            return false;
+
+        if (agent.remainingDistance > agent.stoppingDistance)
+            return false;
+
+        if (agent.hasPath && agent.velocity.sqrMagnitude != 0f)
+            return false;
+
+        return true;
     }
 }

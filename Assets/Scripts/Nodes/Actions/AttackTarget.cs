@@ -1,6 +1,6 @@
 // AttackTarget.cs
-// FIX: retorna Running en loop mientras el enemigo este visible,
-// no Success, para que el Sequence no termine y el Selector no reinicie.
+// FIX: cuando el objetivo muere limpia el Blackboard y retorna Failure
+// para que el NPC no se quede pegado al cadáver y vuelva a patrullar.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -11,32 +11,46 @@ public class AttackTarget : ActionNode
     private float _timer;
 
     private AICharacterCombatLand _combat;
+    private AICharacterActionLand _land;
 
     public override void OnAwake()
     {
         base.OnAwake();
         _combat = GetComponent<AICharacterCombatLand>();
+        _land = GetComponent<AICharacterActionLand>();
     }
 
     public override void OnStart()
     {
-        _timer = 0f;  // ataca de inmediato al entrar
+        _timer = 0f; // ataca de inmediato al entrar
     }
 
     public override TaskStatus OnUpdate()
     {
         if (_combat == null) return TaskStatus.Failure;
 
-        // Busca el enemigo por las dos vias
+        // Busca el enemigo por las dos vías
         Transform enemy = null;
         if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
             enemy = _AIEyeNPC.Enemy;
         else if (_Blackboard != null && _Blackboard.currentTarget != null)
             enemy = _Blackboard.currentTarget;
 
-        // Si perdió al enemigo, termina el Sequence para que el Selector evalúe de nuevo
         if (enemy == null) return TaskStatus.Failure;
 
+        // FIX: verifica que el objetivo no esté muerto
+        HealthBase targetHealth = enemy.GetComponent<HealthBase>();
+        if (targetHealth != null && targetHealth.IsDead)
+        {
+            // Limpia todo y deja de atacar
+            if (_AIEyeNPC != null) _AIEyeNPC.Enemy = null;
+            if (_Blackboard != null) _Blackboard.currentTarget = null;
+            if (_land != null) _land.StopMoving();
+            Debug.Log($"[{gameObject.name}] objetivo eliminado, vuelve a patrullar.");
+            return TaskStatus.Failure;  // Failure ? Selector reevalúa ? Patrol
+        }
+
+        // Ataca según el cooldown
         _timer -= Time.deltaTime;
         if (_timer <= 0f)
         {
@@ -44,7 +58,6 @@ public class AttackTarget : ActionNode
             _timer = attackCooldown;
         }
 
-        // Running = sigue en este nodo mientras tenga enemigo
-        return TaskStatus.Running;
+        return TaskStatus.Running; // sigue atacando mientras el enemigo esté vivo
     }
 }
