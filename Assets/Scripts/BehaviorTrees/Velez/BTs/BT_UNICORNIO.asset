@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: BT_UNICORNIO
+  m_EditorClassIdentifier: Assembly-CSharp::BehaviorDesigner.Runtime.ExternalBehaviorTree
+  mBehaviorSource:
+    behaviorName: BT_UNICORNIO
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-415.6631,193.975281)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
+        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-131.501862,200.14856)"},"ID":4,"Name":"En
+        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-100.311829,126.815308)"},"ID":5,"Name":"Is
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(226.709381,194.96315)"},"ID":7,"Name":"Atacar
+        a un enemigo","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-118.834656,135.4703)"},"ID":8,"Name":"Enemy
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(-4.921623,144.100082)"},"ID":9,"Name":"Move
+        To Target","Instant":true,"SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(124.172607,135.3547)"},"ID":10,"Name":"Attack
+        Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"Patrol","NodeData":{"Offset":"(478.8496,183.055527)"},"ID":11,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.13
