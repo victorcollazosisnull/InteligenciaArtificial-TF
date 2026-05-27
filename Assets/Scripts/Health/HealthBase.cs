@@ -1,4 +1,3 @@
-// HealthBase.cs - FIX: Awake() es protected virtual para que subclases puedan override
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,13 +34,9 @@ public class HealthBase : MonoBehaviour
     public bool IsDead => health <= 0f;
     public bool IsDangerHealth => health < MaxHealth * 0.5f;
 
-    // FIX: protected virtual para que HealthIALandOrco etc. puedan hacer override
     protected virtual void Awake()
     {
-        // Las subclases setean MaxHealth en LoadComponent,
-        // así que inicializamos DESPUÉS de LoadComponent
         LoadComponent();
-        // Ahora sí health = MaxHealth correcto (ya fue seteado por la subclase)
         health = MaxHealth;
         armor = MaxArmor;
     }

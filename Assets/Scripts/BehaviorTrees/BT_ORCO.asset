@@ -20,23 +20,23 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(366.201477,179.450867)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.79833984,142.178116)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-838.778137,202.337341)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(-3.53376961,134.349976)"},"ID":3,"Name":"Is
-        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-560.361145,202.3548)"},"ID":4,"Name":"En
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(366.201477,179.450867)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.79833984,142.178116)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-866.5559,202.337341)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(-3.53376961,134.349976)"},"ID":3,"Name":"Is
+        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-588.1389,202.3548)"},"ID":4,"Name":"En
         peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-98.91201,127.508614)"},"ID":5,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(72.74857,129.761185)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-201.418045,201.636139)"},"ID":7,"Name":"Ve
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(72.74857,129.761185)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-229.1958,201.636139)"},"ID":7,"Name":"Ve
         duende \u2192 perseguir y golpear","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-141.834808,131.844559)"},"ID":8,"Name":"Enemy
         Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(-3.673584,125.950867)"},"ID":9,"Name":"Move
         To Target","Instant":true,"SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(140.326416,127.950867)"},"ID":10,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(238.646423,203.952438)"},"ID":11,"Name":"Ve
+        Target","Instant":true,"SingleattackCooldown":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(210.868668,203.952438)"},"ID":11,"Name":"Ve
         cazador \u2192 atacar","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-165.747742,126.679749)"},"ID":12,"Name":"Enemy
         Visible","Instant":true},{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(4.504773,125.543396)"},"ID":13,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(160.893646,128.952454)"},"ID":14,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(742.262939,196.998871)"},"ID":15,"Name":"Tiene
+        Target","Instant":true,"SingleattackCooldown":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(714.485168,196.998871)"},"ID":15,"Name":"Tiene
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":16,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":17,"Name":"Find
         Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":18,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":19,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1074.37219,197.204712)"},"ID":20,"Name":"Patrol","Instant":true,"SinglepatrolRadius":8}]}}'
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1046.59448,197.204712)"},"ID":20,"Name":"Patrol","Instant":true,"SinglepatrolRadius":8}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
