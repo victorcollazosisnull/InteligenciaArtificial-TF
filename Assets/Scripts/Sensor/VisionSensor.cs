@@ -1,8 +1,4 @@
-// VisionSensor.cs - FIX DEFINITIVO
-// El problema anterior: Scan() borraba currentTarget=null 20x por segundo,
-// compitiendo con el BT que lo leía en el mismo frame.
-// Solución: el target se mantiene hasta que realmente se pierde de vista.
-// Solo se borra si pasaron X segundos sin verlo (memoryTime).
+
 using UnityEngine;
 
 public class VisionSensor : MonoBehaviour
@@ -25,6 +21,7 @@ public class VisionSensor : MonoBehaviour
 
     [Header("Layers")]
     public LayerMask enemyLayers;
+    public LayerMask allyLayers;
     public LayerMask occlusionLayers;
 
     [Header("Ojo")]
@@ -40,6 +37,7 @@ public class VisionSensor : MonoBehaviour
     float _scanTimer;
     int _count;
     readonly Collider[] _colliders = new Collider[50];
+    readonly Collider[] _allyColliders = new Collider[50];
     float _halfHeightNeg;
     float _halfHeightPos;
     Transform _detected;
@@ -102,7 +100,35 @@ public class VisionSensor : MonoBehaviour
             }
             break;
         }
+        void ScanAllies()
+        {
+            int allyCount = Physics.OverlapSphereNonAlloc(
+                transform.position,
+                distance,
+                _colliders,
+                allyLayers);
 
+            for (int i = 0; i < allyCount; i++)
+            {
+                if (_colliders[i] == null) continue;
+                if (_colliders[i].gameObject == gameObject) continue;
+
+                HealthBase otherHealth = _colliders[i].GetComponent<HealthBase>();
+                if (otherHealth == null) continue;
+
+                bool isAlly = (_ownerHealth != null) &&
+                              _ownerHealth.IsAllied(otherHealth);
+
+                if (!isAlly) continue;
+                if (!IsInSight(_colliders[i])) continue;
+
+                Transform currentAlly = _colliders[i].transform;
+                _aiEye.Allied = currentAlly;
+                _detected = currentAlly;
+
+                break;
+            }
+        }
         if (!foundEnemy)
         {
             // ❌ No ve al enemigo: descuenta el timer de memoria
