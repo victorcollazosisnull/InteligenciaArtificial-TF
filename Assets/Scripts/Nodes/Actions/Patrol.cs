@@ -51,7 +51,7 @@ public class Patrol : ActionNode
         {
             _land.MoveTo(hit.position);
 
-            Debug.Log($"[{gameObject.name}] nuevo punto patrol: {hit.position}");
+            //Debug.Log($"[{gameObject.name}] nuevo punto patrol: {hit.position}");
         }
     }
 }

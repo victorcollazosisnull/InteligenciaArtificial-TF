@@ -32,6 +32,14 @@ public class HealthBase : MonoBehaviour
     private List<Collider> colliderHide = new List<Collider>();
 
     public bool IsDead => health <= 0f;
+    public float HealthPercent
+    {
+        get
+        {
+            if (MaxHealth <= 0f) return 0f;
+            return (health / MaxHealth) * 100f;
+        }
+    }
     public bool IsDangerHealth => health < MaxHealth * 0.5f;
 
     protected virtual void Awake()

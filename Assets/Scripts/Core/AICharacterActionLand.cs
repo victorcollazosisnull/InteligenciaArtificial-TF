@@ -25,7 +25,7 @@ public class AICharacterActionLand : AICharacterActions
         {
             bool success = agent.SetDestination(destination);
 
-            Debug.Log($"MoveTo -> {destination} | success: {success}");
+            //Debug.Log($"MoveTo -> {destination} | success: {success}");
         }
     }
 
