@@ -1349,8 +1349,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   positionEye: {fileID: 894371456}
-  meshColor: {r: 0.67058825, g: 0.03708094, b: 0, a: 1}
-  detectedColor: {r: 1, g: 0.41411152, b: 0, a: 1}
+  meshColor: {r: 0.67058825, g: 0.03708094, b: 0, a: 0.4392157}
+  detectedColor: {r: 1, g: 0.41411152, b: 0, a: 0.49019608}
   IsDrawGizmo: 1
 --- !u!1 &330585543
 GameObject:
@@ -2430,7 +2430,7 @@ MonoBehaviour:
     m_Bits: 128
   positionEye: {fileID: 825859103}
   meshColor: {r: 0.86765337, g: 0, b: 1, a: 0.5058824}
-  detectedColor: {r: 0.9643564, g: 0.69803923, b: 1, a: 0.83137256}
+  detectedColor: {r: 0.9643564, g: 0.69803923, b: 1, a: 0.70980394}
   IsDrawGizmo: 1
 --- !u!195 &701586852
 NavMeshAgent:

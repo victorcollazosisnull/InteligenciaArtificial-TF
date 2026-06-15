@@ -50,8 +50,6 @@ public class Patrol : ActionNode
             NavMesh.AllAreas))
         {
             _land.MoveTo(hit.position);
-
-            //Debug.Log($"[{gameObject.name}] nuevo punto patrol: {hit.position}");
         }
     }
 }

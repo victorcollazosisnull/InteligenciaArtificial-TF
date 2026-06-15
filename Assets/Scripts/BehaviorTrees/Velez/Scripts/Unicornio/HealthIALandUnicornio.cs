@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-public class HealthIALandUnicornio : HealthNoCombat
+public class HealthIALandUnicornio : HealthCombat
 {
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
