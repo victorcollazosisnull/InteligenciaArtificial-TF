@@ -48,4 +48,9 @@ public class HealthIALandUnicornio : HealthCombat
         if (IsDead)
             Death();
     }
+    public float GetHealthPercentage()
+    {
+        if (MaxHealth <= 0) return 0f;
+        return HealthPercent;
+    }
 }

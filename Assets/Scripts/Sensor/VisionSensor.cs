@@ -215,6 +215,19 @@ public class VisionSensor : MonoBehaviour
             Gizmos.DrawLine(eyePos, eyePos + transform.forward * 5f);
         }
     }
+    public Transform GetClosestEnemy()
+    {
+        return _detectedEnemy; // Devuelve el enemigo que el sensor detectó actualmente
+    }
+
+    public float GetDistanceToClosestEnemy()
+    {
+        if (_detectedEnemy != null)
+        {
+            return Vector3.Distance(transform.position, _detectedEnemy.position);
+        }
+        return 30f; // Retorna la distancia máxima si no hay nadie, para que el sistema asuma "Lejos"
+    }
 
     Mesh CreateWedgeMesh()
     {
