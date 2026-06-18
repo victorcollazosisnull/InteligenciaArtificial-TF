@@ -20,10 +20,17 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-210.9219,193.975281)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
-        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(14.3313351,200.14856)"},"ID":4,"Name":"En
-        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-69.97724,123.287361)"},"ID":5,"Name":"Enemy
-        Visible","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(90.5214844,111.190315)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"Patrol","NodeData":{"Offset":"(210.890015,200.29689)"},"ID":7,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-376.824554,200.14856)"},"ID":2,"Name":"En
+        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-69.97724,106.620705)"},"ID":3,"Name":"Enemy
+        Visible","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(73.85483,111.190315)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-71.62271,217.975479)"},"ID":5,"Name":"Seguir
+        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-95.2998657,148.2044)"},"ID":6,"Name":"Ally
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(91.13519,146.1117)"},"ID":7,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(453.3783,263.694733)"},"ID":8,"Name":"Tiene
+        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-197.3383,126.430664)"},"ID":9,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-67.3383,126.430664)"},"ID":10,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":11,"Name":"Move
+        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":12,"Name":"Eat
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(747.52,219.527649)"},"ID":13,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

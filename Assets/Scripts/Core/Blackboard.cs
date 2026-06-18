@@ -6,8 +6,12 @@ using UnityEngine;
 
 public class Blackboard : MonoBehaviour
 {
-    [Header("Objetivo actual")]
+    [Header("Objetivos actuales")]
+    public Transform enemyTarget;            // Enemigo detectado
+    public Transform allyTarget;
+
     public Transform currentTarget;           // enemigo o presa en seguimiento
+
     public Vector3   lastKnownPosition;       // ultima posicion conocida del objetivo
     public bool      hasLastKnownPosition;
 

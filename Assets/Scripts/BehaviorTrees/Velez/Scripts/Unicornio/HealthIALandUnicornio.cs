@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-public class HealthIALandUnicornio : HealthNoCombat
+public class HealthIALandUnicornio : HealthCombat
 {
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
@@ -47,5 +47,10 @@ public class HealthIALandUnicornio : HealthNoCombat
         // Si la vida llegó a 0, morir
         if (IsDead)
             Death();
+    }
+    public float GetHealthPercentage()
+    {
+        if (MaxHealth <= 0) return 0f;
+        return HealthPercent;
     }
 }

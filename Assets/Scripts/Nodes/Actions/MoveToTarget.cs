@@ -1,13 +1,18 @@
-// MoveToTarget.cs
-// FIX: verifica que el objetivo siga vivo antes de moverse hacia él.
-// Si el objetivo está muerto, limpia el Blackboard y retorna Failure
-// para que el NPC deje de perseguir el cadáver y vuelva a patrullar.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
+
+// NUEVO: Enum para decidir a quién seguir
+public enum TargetFaction
+{
+    Enemy,
+    Ally
+}
 
 [TaskCategory("BosqueEncantado/Move")]
 public class MoveToTarget : ActionNode
 {
+    public TargetFaction targetToFollow; // Opcion en el editor
+
     public float stopDistance = 2.0f;
 
     private AICharacterActionLand _land;
@@ -22,12 +27,23 @@ public class MoveToTarget : ActionNode
     {
         if (_land == null) return TaskStatus.Failure;
 
-        // Busca el target por las dos vías
         Transform target = null;
-        if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
-            target = _AIEyeNPC.Enemy;
-        else if (_Blackboard != null && _Blackboard.currentTarget != null)
-            target = _Blackboard.currentTarget;
+
+        // NUEVO: Selecciona el objetivo dependiendo de la configuracion del nodo
+        if (targetToFollow == TargetFaction.Enemy)
+        {
+            if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
+                target = _AIEyeNPC.Enemy;
+            else if (_Blackboard != null && _Blackboard.enemyTarget != null)
+                target = _Blackboard.enemyTarget;
+        }
+        else if (targetToFollow == TargetFaction.Ally)
+        {
+            if (_AIEyeNPC != null && _AIEyeNPC.Allied != null)
+                target = _AIEyeNPC.Allied;
+            else if (_Blackboard != null && _Blackboard.allyTarget != null)
+                target = _Blackboard.allyTarget;
+        }
 
         if (target == null)
         {
@@ -35,15 +51,23 @@ public class MoveToTarget : ActionNode
             return TaskStatus.Failure;
         }
 
-        // FIX: verifica que el objetivo no esté muerto
+        // Verifica que el objetivo no esté muerto (Aplica para aliados también)
         HealthBase targetHealth = target.GetComponent<HealthBase>();
         if (targetHealth != null && targetHealth.IsDead)
         {
-            // Limpia el target para no seguir al cadáver
-            if (_Blackboard != null) _Blackboard.currentTarget = null;
-            if (_AIEyeNPC != null) _AIEyeNPC.Enemy = null;
+            if (targetToFollow == TargetFaction.Enemy)
+            {
+                if (_Blackboard != null) _Blackboard.enemyTarget = null;
+                if (_AIEyeNPC != null) _AIEyeNPC.Enemy = null;
+            }
+            else
+            {
+                if (_Blackboard != null) _Blackboard.allyTarget = null;
+                if (_AIEyeNPC != null) _AIEyeNPC.Allied = null;
+            }
+
             _land.StopMoving();
-            Debug.Log($"[{gameObject.name}] objetivo muerto, deja de perseguir.");
+            Debug.Log($"[{gameObject.name}] objetivo muerto, cancelando seguimiento.");
             return TaskStatus.Failure;
         }
 
@@ -55,6 +79,6 @@ public class MoveToTarget : ActionNode
         }
 
         _land.MoveTo(target.position);
-        return TaskStatus.Running;
+        return TaskStatus.Running; // FIX IMPORTANTE: Debe ser Running mientras se mueve
     }
 }
