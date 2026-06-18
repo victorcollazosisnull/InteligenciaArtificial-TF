@@ -34,10 +34,6 @@ public class AICharacterActionLandCazador : AICharacterCombatLand
         if (trapTimer > 0f) trapTimer -= Time.deltaTime;
     }
 
-    /// <summary>
-    /// Ataca al objetivo: flecha si es presa (pato/unicornio),
-    /// melee si es el Orco que lo esta atacando.
-    /// </summary>
     public override void Attack()
     {
         if (aIEyeNPC == null || aIEyeNPC.Enemy == null) return;
@@ -72,10 +68,6 @@ public class AICharacterActionLandCazador : AICharacterCombatLand
         }
     }
 
-    /// <summary>
-    /// Coloca una trampa en la posicion actual del cazador.
-    /// Llamado por el nodo PlaceTrap del BehaviorTree.
-    /// </summary>
     public void PlaceTrap()
     {
         if (trapTimer > 0f || trapPrefab == null) return;
