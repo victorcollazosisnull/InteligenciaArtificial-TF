@@ -20,9 +20,9 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(458.4978,329.798218)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1.50219727,119.798218)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-569.4082,179.628113)"},"ID":2,"Name":"Ve
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(458.4978,329.798218)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1.50219727,119.798218)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-669.408142,179.628113)"},"ID":2,"Name":"Ve
         Orco \u2192 HUIR inmediatamente","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-89.97046,141.628113)"},"ID":3,"Name":"Enemy
-        Visible","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(90.02954,142.628113)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-208.019333,182.628113)"},"ID":5,"Name":"Ve
+        Visible","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(90.02954,142.628113)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-308.019348,182.628113)"},"ID":5,"Name":"Ve
         Hada \u2192 atacar","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-128.248215,142.628113)"},"ID":6,"Name":"Enemy
         Visible","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(125.331322,138.077026)"},"ID":7,"Name":"Selector
         (interno)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-170.952454,163.207275)"},"ID":8,"Name":"Sequence
@@ -32,15 +32,15 @@ MonoBehaviour:
         Target","Instant":true,"SingleattackCooldown":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(217.404938,156.310425)"},"ID":13,"Name":"Sequence
         atacar directo","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-88.5715256,141.428162)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(87.1426849,135.714233)"},"ID":15,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(300.751617,176.812454)"},"ID":16,"Name":"Robar
+        Target","Instant":true,"SingleattackCooldown":1}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(200.751587,176.812454)"},"ID":16,"Name":"Robar
         comida al Orco","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-176.331314,141.921143)"},"ID":17,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-64.08629,142.941528)"},"ID":18,"Name":"Find
         Food","Instant":true,"SinglesearchRadius":40},{"Type":"MoveToFood","NodeData":{"Offset":"(57.3422928,137.839478)"},"ID":19,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(179.153,135.635315)"},"ID":20,"Name":"Eat
-        Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(728.93396,186.3446)"},"ID":21,"Name":"Buscar
+        Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(628.934,186.3446)"},"ID":21,"Name":"Buscar
         ultima posicion conocida","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-107.999413,134.348572)"},"ID":22,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(113.3922,125.4124)"},"ID":23,"Name":"Move
-        To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1000.58105,187.973145)"},"ID":24,"Name":"Patrol","Instant":true,"SinglepatrolRadius":12}]}}'
+        To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(900.5811,187.973145)"},"ID":24,"Name":"Patrol","Instant":true,"SinglepatrolRadius":12}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
