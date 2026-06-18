@@ -57,23 +57,19 @@ public class AICharacterActionLandOrco : AICharacterCombatLand
 
         ApplyFuzzyValues(ira);
 
-        Debug.Log(
-        $"[FUZZY ORCO] " +
-        $"Hambre:{bb.hunger:F1} " +
-        $"HP:{hp.HealthPercent:F1}% " +
-        $"Ira:{ira:F1} " +
-        $"Vel:{agent.speed:F1} " +
-        $"Daño:{attackDamage:F1}");
+        //Debug.Log(
+        //$"[FUZZY ORCO] " +
+        //$"Hambre:{bb.hunger:F1} " +
+        //$"HP:{hp.HealthPercent:F1}% " +
+        //$"Ira:{ira:F1} " +
+        //$"Vel:{agent.speed:F1} " +
+        //$"Daño:{attackDamage:F1}");
     }
     public override void LoadComponent()
     {
         base.LoadComponent();
     }
 
-    /// <summary>
-    /// Golpe melee del orco.
-    /// Busca el HealthBase del objetivo actual y aplica dano.
-    /// </summary>
     public override void Attack()
     {
         if (aIEyeNPC == null || aIEyeNPC.Enemy == null) return;
@@ -96,10 +92,6 @@ public class AICharacterActionLandOrco : AICharacterCombatLand
         Debug.Log($"[Orco] golpea a {aIEyeNPC.Enemy.name} por {attackDamage}");
     }
 
-    /// <summary>
-    /// El orco come y se calma: resetea el hambre.
-    /// Llamado por el nodo EatFood.
-    /// </summary>
     public void Eat()
     {
         HungerSystem hs = GetComponent<HungerSystem>();

@@ -1,6 +1,3 @@
-// Patrol.cs
-// FIX: genera un nuevo punto cada vez que OnStart() es llamado,
-// así el NPC retoma la patrulla correctamente después de comer o atacar.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,10 +15,8 @@ public class Patrol : ActionNode
         _land = GetComponent<AICharacterActionLand>();
     }
 
-    // OnStart se llama cada vez que el nodo se activa (no solo la primera vez)
     public override void OnStart()
     {
-        Debug.Log("PATRULLANDO OTRA VEZ");
         _land.StopMoving();
         GenerateNewPoint();
     }
@@ -50,8 +45,6 @@ public class Patrol : ActionNode
             NavMesh.AllAreas))
         {
             _land.MoveTo(hit.position);
-
-            //Debug.Log($"[{gameObject.name}] nuevo punto patrol: {hit.position}");
         }
     }
 }
