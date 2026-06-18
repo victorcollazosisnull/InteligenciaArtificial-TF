@@ -21,7 +21,6 @@ public class Patrol : ActionNode
     // OnStart se llama cada vez que el nodo se activa (no solo la primera vez)
     public override void OnStart()
     {
-        Debug.Log("PATRULLANDO OTRA VEZ");
         _land.StopMoving();
         GenerateNewPoint();
     }

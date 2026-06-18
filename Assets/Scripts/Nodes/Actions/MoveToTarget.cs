@@ -11,7 +11,7 @@ public enum TargetFaction
 [TaskCategory("BosqueEncantado/Move")]
 public class MoveToTarget : ActionNode
 {
-    public TargetFaction targetToFollow = TargetFaction.Enemy; // Opcion en el editor
+    public TargetFaction targetToFollow; // Opcion en el editor
 
     public float stopDistance = 2.0f;
 

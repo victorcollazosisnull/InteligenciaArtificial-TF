@@ -11,7 +11,7 @@ public class HungerSystem : MonoBehaviour
     [Header("Configuracion")]
     public float hungerIncreaseRate = 2f;   // unidades de hambre por segundo
     public float maxHunger          = 100f;
-    public float hungryThreshold    = 60f;  // a partir de aqui isHungry = true
+    public float hungryThreshold;  // a partir de aqui isHungry = true
 
     private void Awake()
     {

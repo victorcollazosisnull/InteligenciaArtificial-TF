@@ -4,36 +4,43 @@ public class FuzzyInferenceController : MonoBehaviour
 {
     private HealthIALandUnicornio _health;
     private VisionSensor _vision;
+    private Blackboard _blackboard;
 
     // Guarda el último resultado para que el nodo de condición lo consulte de forma directa
-    private float _ultimaTendenciaCalculada;
+    [SerializeField] private float _ultimaTendenciaCalculada;
 
     void Awake()
     {
         _health = GetComponent<HealthIALandUnicornio>();
         _vision = GetComponent<VisionSensor>();
+        _blackboard = GetComponent<Blackboard>();
     }
 
     void Update()
+{
+    if (_health == null || _vision == null) return;
+
+        // 1. Verificar primero si realmente hay un enemigo
+        Transform enemigo = _blackboard.enemyTarget;
+    
+    if (enemigo == null)
     {
-        if (_health == null || _vision == null) return;
-
-        // 1. Obtención de datos reales (Inputs de los sensores)
-        float saludPropia = _health.GetHealthPercentage();
-        float distancia = _vision.GetDistanceToClosestEnemy();
-
-        // Obtener la salud del enemigo a través del transform detectado por el VisionSensor
-        Transform enemigo = _vision.GetClosestEnemy();
-        float saludEnemigo = 100f;
-        if (enemigo != null)
-        {
-            var h = enemigo.GetComponent<HealthBase>();
-            if (h != null) saludEnemigo = h.HealthPercent;
-        }
-
-        // 2. Procesamiento de Lógica Difusa y guardado directo en la variable de consulta
-        _ultimaTendenciaCalculada = CalcularLogicaDifusa(saludPropia, saludEnemigo, distancia);
+        // Si no hay enemigo, la tendencia es neutral (50) o el valor que decidas
+        _ultimaTendenciaCalculada = 50f; 
+        return; // Nos salimos temprano y ahorramos procesamiento
     }
+
+    // 2. Si llegamos aquí, es porque SÍ hay un enemigo detectado
+    float saludPropia = _health.GetHealthPercentage();
+    float distancia = _vision.GetDistanceToClosestEnemy();
+    
+    float saludEnemigo = 100f;
+    var h = enemigo.GetComponent<HealthBase>();
+    if (h != null) saludEnemigo = h.HealthPercent;
+
+    // 3. Procesamiento de Lógica Difusa seguro
+    _ultimaTendenciaCalculada = CalcularLogicaDifusa(saludPropia, saludEnemigo, distancia);
+}
 
     /// <summary>
     /// Método público que el nodo CheckFuzzyDirect llamará en cada frame.
