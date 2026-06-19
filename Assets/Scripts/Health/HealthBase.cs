@@ -68,9 +68,17 @@ public class HealthBase : MonoBehaviour
     public virtual void ApplyDamage(float damage)
     {
         if (Imortal) return;
-        armor = Mathf.Max(0, armor - damage);
-        if (armor <= 0)
+
+        if (armor > 0)
+        {
+            float absorbed = Mathf.Min(armor, damage);
+            armor -= absorbed;
+            damage -= absorbed;  
+        }
+
+        if (damage > 0)
             health = Mathf.Max(0, health - damage);
+
         UpdateHealthBar();
         if (IsDead) Death();
     }

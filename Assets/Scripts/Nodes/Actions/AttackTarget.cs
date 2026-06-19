@@ -46,7 +46,7 @@ public class AttackTarget : ActionNode
             if (_AIEyeNPC != null) _AIEyeNPC.Enemy = null;
             if (_Blackboard != null) _Blackboard.currentTarget = null;
             if (_land != null) _land.StopMoving();
-            Debug.Log($"[{gameObject.name}] objetivo eliminado, vuelve a patrullar.");
+            //Debug.Log($"[{gameObject.name}] objetivo eliminado, vuelve a patrullar.");
             return TaskStatus.Failure;  // Failure ? Selector reevalúa ? Patrol
         }
 

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c1d41ba4f862d4aaca127303d0cac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapBehavior
-  damage: 10
+  damage: 100
 --- !u!65 &1010390632348108604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66,8 +66,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.7944121, y: 0.9431546, z: 3.5591426}
-  m_Center: {x: 0.01600957, y: -0.3701489, z: -0.03130126}
+  m_Size: {x: 3.7944121, y: 1.4513503, z: 3.6194837}
+  m_Center: {x: 0.01600957, y: -0.41305286, z: -0.0011307001}
 --- !u!1001 &8329619326024689028
 PrefabInstance:
   m_ObjectHideFlags: 0

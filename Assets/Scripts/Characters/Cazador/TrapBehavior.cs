@@ -29,6 +29,6 @@ public class TrapBehavior : MonoBehaviour
         Debug.Log(
             $"[TRAMPA] {other.name} recibió {damage} de daño");
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

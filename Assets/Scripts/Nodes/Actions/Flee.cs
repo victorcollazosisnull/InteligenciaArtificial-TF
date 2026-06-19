@@ -57,7 +57,7 @@ public class Flee : ActionNode
             return TaskStatus.Failure;
 
         if (_land.HasReachedDestination())
-            return TaskStatus.Success;
+            return TaskStatus.Failure; //aca se podria poner success, pero es mas logico que falle si llega a destino, porque el objetivo es huir, no llegar a un punto especifico.
 
         return TaskStatus.Running;
     }

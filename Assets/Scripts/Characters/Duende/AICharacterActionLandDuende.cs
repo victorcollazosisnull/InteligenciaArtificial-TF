@@ -18,9 +18,6 @@ public class AICharacterActionLandDuende : AICharacterCombatLand
         base.LoadComponent();
     }
 
-    /// <summary>
-    /// El duende ataca: golpea al objetivo (hada principalmente).
-    /// </summary>
     public override void Attack()
     {
         if (aIEyeNPC == null || aIEyeNPC.Enemy == null) return;
@@ -42,10 +39,6 @@ public class AICharacterActionLandDuende : AICharacterCombatLand
         Debug.Log($"[Duende] ataca a {aIEyeNPC.Enemy.name}");
     }
 
-    /// <summary>
-    /// El duende roba la comida del objetivo cercano.
-    /// Llamado por el nodo StealFood cuando esta en rango del Orco.
-    /// </summary>
     public void StealFood()
     {
         Blackboard bb = GetComponent<Blackboard>();
@@ -59,7 +52,6 @@ public class AICharacterActionLandDuende : AICharacterCombatLand
         Destroy(bb.foodTarget.gameObject);
         bb.foodTarget = null;
 
-        // El duende se alimenta al robar
         HungerSystem hs = GetComponent<HungerSystem>();
         if (hs != null) hs.Feed(80f);
     }
