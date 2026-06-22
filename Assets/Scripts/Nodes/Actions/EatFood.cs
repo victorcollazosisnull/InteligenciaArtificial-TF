@@ -1,6 +1,6 @@
 // EatFood.cs
-// FIX: después de comer limpia currentTarget y foodTarget del Blackboard
-// para que el Selector pueda reevaluar y el NPC retome la patrulla.
+// FIX: usa _AIVehicleLand.StopMoving() en vez de GetComponent<AICharacterActionLand>
+// ya que StopMoving ahora está en la rama Vehicle.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -33,17 +33,16 @@ public class EatFood : ActionNode
         // Destruye la comida
         Object.Destroy(_Blackboard.foodTarget.gameObject);
 
-        // FIX: limpia el Blackboard para que el Selector reevalúe
+        // Limpia el Blackboard para que el Selector reevalúe
         _Blackboard.foodTarget = null;
-        _Blackboard.currentTarget = null;   // sin esto el NPC se queda "buscando" algo
-        _Blackboard.isHungry = false; // limpiamos insHungry
+        _Blackboard.currentTarget = null;
+        _Blackboard.isHungry = false;
 
-        AICharacterActionLand land = GetComponent<AICharacterActionLand>();
-
-        if (land != null)
-            land.StopMoving();
+        // FIX: StopMoving ahora está en _AIVehicleLand
+        if (_AIVehicleLand != null)
+            _AIVehicleLand.StopMoving();
 
         Debug.Log($"[{gameObject.name}] comió y vuelve a patrullar.");
-        return TaskStatus.Failure; // ACA ESTABA EL ERROR TODO EL TIEMPO, SI DEVOLVIA SUCCESS, EL SELECTOR NO REEVALUABA Y EL NPC SE QUEDABA COMIENDO INFINITAMENTE
+        return TaskStatus.Failure;
     }
 }

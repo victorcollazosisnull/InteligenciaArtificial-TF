@@ -1,9 +1,10 @@
 // AICharacterVehicleLandHada.cs
-// Acciones específicas para el Hada (Asistir aliados, Proteger y Huir).
+// FIX: hereda de AICharacterVehicleLand (no de AICharacterActionLand).
+// Es un script de MOVIMIENTO del Hada, no de acciones.
+// StopMoving() y MoveTo() vienen de AICharacterVehicle.
 using UnityEngine;
-using UnityEngine.AI;
 
-public class AICharacterVehicleLandHada : AICharacterActionLand
+public class AICharacterVehicleLandHada : AICharacterVehicleLand
 {
     [Header("Hada - Configuración de Acciones")]
     public float protectionRange = 3f;
@@ -14,28 +15,24 @@ public class AICharacterVehicleLandHada : AICharacterActionLand
     public override void LoadComponent()
     {
         base.LoadComponent();
-        // Conectamos las acciones con su sistema de salud mágico
         healthHada = GetComponent<HealthIALandHada>();
     }
 
     /// <summary>
-    /// Intenta proteger al aliado. Si está lo suficientemente cerca, detiene el movimiento y lanza el escudo.
+    /// Intenta proteger al aliado con un escudo mágico.
+    /// Retorna true si está en rango y lanzó el escudo.
     /// </summary>
-    /// <returns>True si logró protegerlo, False si aún está lejos.</returns>
     public bool IntentarProtegerAliado(HealthBase ally)
     {
         if (ally == null || healthHada == null) return false;
 
         float distance = Vector3.Distance(transform.position, ally.transform.position);
-
         if (distance <= protectionRange)
         {
-            StopMoving();
-            //healthHada.CastShieldOn(ally);
+            StopMoving();  // OK: viene de AICharacterVehicle
             Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo mágico!");
             return true;
         }
-
         return false;
     }
 }

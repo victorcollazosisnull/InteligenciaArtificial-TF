@@ -539,6 +539,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &492454557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492454531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13941791d24ef05458c96ac00926ba89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandCazador
 --- !u!1 &649128629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1157,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1530461863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffdf4732d1b93d4abd9785dc79f70b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandOrco
 --- !u!4 &1624330097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7214215714517706238, guid: d5173bdf5edf22747a65210a8bd30593, type: 3}
@@ -1182,6 +1206,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1747969803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747969777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8b4f7c74bd25342af31c474f5b05aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandDuende
 --- !u!1001 &1752071625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1620,7 +1656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2204758039287497203, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.44
+      value: 6.6
       objectReference: {fileID: 0}
     - target: {fileID: 2204758039287497203, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1628,7 +1664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2204758039287497203, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: -10.3
       objectReference: {fileID: 0}
     - target: {fileID: 2204758039287497203, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1685,6 +1721,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 407857280082188617, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       insertIndex: 4
       addedObject: {fileID: 492454544}
+    - targetCorrespondingSourceObject: {fileID: 407857280082188617, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 492454557}
   m_SourcePrefab: {fileID: 100100000, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
 --- !u!1001 &6182975273394661207
 PrefabInstance:
@@ -1781,6 +1820,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4060957039869165343, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1747969790}
+    - targetCorrespondingSourceObject: {fileID: 4060957039869165343, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 1747969803}
   m_SourcePrefab: {fileID: 100100000, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
 --- !u!1001 &7613646284119894526
 PrefabInstance:
@@ -1881,6 +1923,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 784484513577072152, guid: 4676bf0502606404489e65d4392fb12d, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1530461862}
+    - targetCorrespondingSourceObject: {fileID: 784484513577072152, guid: 4676bf0502606404489e65d4392fb12d, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 1530461863}
   m_SourcePrefab: {fileID: 100100000, guid: 4676bf0502606404489e65d4392fb12d, type: 3}
 --- !u!1001 &9167459956192748438
 PrefabInstance:

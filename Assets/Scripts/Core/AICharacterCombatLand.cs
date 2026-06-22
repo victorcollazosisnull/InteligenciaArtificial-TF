@@ -1,8 +1,7 @@
 // AICharacterCombatLand.cs
-// Cuarta capa: NPC terrestre que puede combatir.
-// Agrega el metodo Attack() que las subclases concretas
-// (Duende, Cazador, Orco) sobreescriben con su logica propia.
-// Los nodos del BT llaman Attack() sin conocer el tipo exacto de NPC.
+// Capa de COMBATE terrestre.
+// Hereda de AICharacterActionLand (rama de acciones).
+// Agrega Attack() que cada NPC concreto sobreescribe.
 using UnityEngine;
 
 public class AICharacterCombatLand : AICharacterActionLand
@@ -12,12 +11,9 @@ public class AICharacterCombatLand : AICharacterActionLand
         base.LoadComponent();
     }
 
-    /// <summary>
-    /// Ejecuta el ataque del NPC. Cada subclase define como ataca:
-    /// el orco golpea, el cazador dispara, el duende roba.
-    /// </summary>
     public virtual void Attack()
     {
         Debug.Log($"[AICharacterCombatLand] {gameObject.name} ataca!");
     }
 }
+ 
