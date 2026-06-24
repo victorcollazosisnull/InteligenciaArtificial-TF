@@ -18,10 +18,6 @@ public class AICharacterVehicleLandHada : AICharacterVehicleLand
         healthHada = GetComponent<HealthIALandHada>();
     }
 
-    /// <summary>
-    /// Intenta proteger al aliado con un escudo mágico.
-    /// Retorna true si está en rango y lanzó el escudo.
-    /// </summary>
     public bool IntentarProtegerAliado(HealthBase ally)
     {
         if (ally == null || healthHada == null) return false;

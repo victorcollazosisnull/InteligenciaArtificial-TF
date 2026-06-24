@@ -1,4 +1,3 @@
-// EatFood.cs
 // FIX: usa _AIVehicleLand.StopMoving() en vez de GetComponent<AICharacterActionLand>
 // ya que StopMoving ahora está en la rama Vehicle.
 using BehaviorDesigner.Runtime.Tasks;

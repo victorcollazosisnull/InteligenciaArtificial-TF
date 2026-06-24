@@ -1,4 +1,3 @@
-// FindFood.cs
 // Busca el objeto de comida mas cercano dentro del radio de busqueda.
 // Si lo encuentra lo registra en Blackboard.foodTarget y retorna Success.
 using BehaviorDesigner.Runtime.Tasks;

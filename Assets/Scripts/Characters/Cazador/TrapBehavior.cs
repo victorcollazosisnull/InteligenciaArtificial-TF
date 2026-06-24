@@ -10,8 +10,7 @@ public class TrapBehavior : MonoBehaviour
     {
         if (activated) return;
 
-        HealthBase hp =
-            other.GetComponent<HealthBase>();
+        HealthBase hp = other.GetComponent<HealthBase>();
 
         if (hp == null) return;
 

@@ -1,4 +1,3 @@
-// NPCAnimator.cs
 // Script independiente que conecta el estado del NPC con el Animator.
 // Se pone en el hijo que tiene el mesh (no en el padre con la IA).
 using UnityEngine;

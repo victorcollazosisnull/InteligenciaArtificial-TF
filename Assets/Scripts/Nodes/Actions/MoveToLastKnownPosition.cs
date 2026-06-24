@@ -1,4 +1,3 @@
-// MoveToLastKnownPosition.cs — usa AICharacterVehicleLand
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
