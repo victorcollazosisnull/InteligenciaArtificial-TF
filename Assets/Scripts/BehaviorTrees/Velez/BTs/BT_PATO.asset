@@ -20,17 +20,23 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-376.824554,200.14856)"},"ID":2,"Name":"En
-        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-69.97724,106.620705)"},"ID":3,"Name":"Enemy
-        Visible","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(73.85483,111.190315)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-71.62271,217.975479)"},"ID":5,"Name":"Seguir
-        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-95.2998657,148.2044)"},"ID":6,"Name":"Ally
-        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(91.13519,146.1117)"},"ID":7,"Name":"Move
-        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(453.3783,263.694733)"},"ID":8,"Name":"Tiene
-        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-197.3383,126.430664)"},"ID":9,"Name":"Is
-        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-67.3383,126.430664)"},"ID":10,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":11,"Name":"Move
-        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":12,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(747.52,219.527649)"},"ID":13,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-700,200)"},"ID":2,"Name":"ALARMA
+        activa \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsAlarmActive","NodeData":{"Offset":"(-75.00096,106.62)"},"ID":3,"Name":"Is
+        Alarm Active","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(94.99921,111.19)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-376.824554,200.14856)"},"ID":5,"Name":"En
+        peligro \u2192 alarma + huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-69.97724,106.620705)"},"ID":6,"Name":"Enemy
+        Visible","Instant":true},{"Type":"TriggerAlarm","NodeData":{"Offset":"(30.5714188,106)"},"ID":7,"Name":"Trigger
+        Alarm","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(130.99765,111.190315)"},"ID":8,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(24.21056,202.350479)"},"ID":9,"Name":"Seguir
+        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-95.2998657,116.954414)"},"ID":10,"Name":"Ally
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(91.13519,114.8617)"},"ID":11,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(483.681335,203.0887)"},"ID":12,"Name":"Tiene
+        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-197.3383,126.430664)"},"ID":13,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-67.3383,126.430664)"},"ID":14,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":15,"Name":"Move
+        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":16,"Name":"Eat
+        Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(984.7303,166.605453)"},"ID":17,"Name":"Movimiento","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-105,160)"},"ID":18,"Name":"Moverse
+        en bandada","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsNearFlock","NodeData":{"Offset":"(-45.8506241,136.780212)"},"ID":19,"Name":"Is
+        Near Flock","Instant":true},{"Type":"FlockMove","NodeData":{"Offset":"(94.1495361,136.780212)"},"ID":20,"Name":"Flock
+        Move","Instant":true,"SingleneighborRadius":3,"SingleseparationWeight":1.5,"SinglealignmentWeight":1,"SinglecohesionWeight":1}]},{"Type":"Patrol","NodeData":{"Offset":"(140,175)"},"ID":21,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

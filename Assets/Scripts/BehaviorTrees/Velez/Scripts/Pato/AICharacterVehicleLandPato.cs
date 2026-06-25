@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AICharacterVehicleLandPato : AICharacterActionLand
+public class AICharacterVehicleLandPato : AICharacterVehicleLand
 {
     [Header("Configuración")]
     [SerializeField] private float eatRange = 2f;

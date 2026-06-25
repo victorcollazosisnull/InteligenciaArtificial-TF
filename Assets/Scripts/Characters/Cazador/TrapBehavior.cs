@@ -10,8 +10,7 @@ public class TrapBehavior : MonoBehaviour
     {
         if (activated) return;
 
-        HealthBase hp =
-            other.GetComponent<HealthBase>();
+        HealthBase hp = other.GetComponent<HealthBase>();
 
         if (hp == null) return;
 
@@ -29,6 +28,6 @@ public class TrapBehavior : MonoBehaviour
         Debug.Log(
             $"[TRAMPA] {other.name} recibió {damage} de daño");
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

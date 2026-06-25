@@ -1,6 +1,5 @@
-// AttackTarget.cs
-// FIX: cuando el objetivo muere limpia el Blackboard y retorna Failure
-// para que el NPC no se quede pegado al cadáver y vuelva a patrullar.
+// FIX: ahora notifica al NPCAnimator para activar la animacion de ataque.
+// Activa IsAttacking=true al entrar, false al salir o perder al enemigo.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -9,27 +8,29 @@ public class AttackTarget : ActionNode
 {
     public float attackCooldown = 1.5f;
     private float _timer;
-
-    private AICharacterCombatLand _combat;
-    private AICharacterActionLand _land;
+    private NPCAnimator _npcAnimator;
 
     public override void OnAwake()
     {
         base.OnAwake();
-        _combat = GetComponent<AICharacterCombatLand>();
-        _land = GetComponent<AICharacterActionLand>();
+        _npcAnimator = this.gameObject.GetComponentInChildren<NPCAnimator>();
     }
 
     public override void OnStart()
     {
-        _timer = 0f; // ataca de inmediato al entrar
+        _timer = 0f;
+        if (_npcAnimator != null) _npcAnimator.TriggerAttack();
+    }
+
+    public override void OnEnd()
+    {
+        if (_npcAnimator != null) _npcAnimator.StopAttack();
     }
 
     public override TaskStatus OnUpdate()
     {
-        if (_combat == null) return TaskStatus.Failure;
+        if (_AICombatLand == null) return TaskStatus.Failure;
 
-        // Busca el enemigo por las dos vías
         Transform enemy = null;
         if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
             enemy = _AIEyeNPC.Enemy;
@@ -38,26 +39,23 @@ public class AttackTarget : ActionNode
 
         if (enemy == null) return TaskStatus.Failure;
 
-        // FIX: verifica que el objetivo no esté muerto
         HealthBase targetHealth = enemy.GetComponent<HealthBase>();
         if (targetHealth != null && targetHealth.IsDead)
         {
-            // Limpia todo y deja de atacar
             if (_AIEyeNPC != null) _AIEyeNPC.Enemy = null;
             if (_Blackboard != null) _Blackboard.currentTarget = null;
-            if (_land != null) _land.StopMoving();
-            Debug.Log($"[{gameObject.name}] objetivo eliminado, vuelve a patrullar.");
-            return TaskStatus.Failure;  // Failure ? Selector reevalúa ? Patrol
+            if (_AIVehicleLand != null) _AIVehicleLand.StopMoving();
+            return TaskStatus.Failure;
         }
-
-        // Ataca según el cooldown
+        //if (_AIVehicleLand != null && enemy != null) //
+        //    _AIVehicleLand.MoveTo(enemy.position); //
         _timer -= Time.deltaTime;
         if (_timer <= 0f)
         {
-            _combat.Attack();
+            _AICombatLand.Attack();
             _timer = attackCooldown;
         }
 
-        return TaskStatus.Running; // sigue atacando mientras el enemigo esté vivo
+        return TaskStatus.Running;
     }
 }

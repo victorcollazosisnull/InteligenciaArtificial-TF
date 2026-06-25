@@ -1,3 +1,4 @@
+// Patrol.cs � usa AICharacterVehicleLand para moverse
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,27 +8,17 @@ public class Patrol : ActionNode
 {
     public float patrolRadius = 10f;
 
-    private AICharacterActionLand _land;
-
-    public override void OnAwake()
-    {
-        base.OnAwake();
-        _land = GetComponent<AICharacterActionLand>();
-    }
-
     public override void OnStart()
     {
-        _land.StopMoving();
+        if (_AIVehicleLand != null) _AIVehicleLand.StopMoving();
         GenerateNewPoint();
     }
 
     public override TaskStatus OnUpdate()
     {
-        if (_land == null) return TaskStatus.Failure;
-
-        if (_land.HasReachedDestination())
+        if (_AIVehicleLand == null) return TaskStatus.Failure;
+        if (_AIVehicleLand.HasReachedDestination())
             GenerateNewPoint();
-
         return TaskStatus.Running;
     }
 
@@ -35,16 +26,9 @@ public class Patrol : ActionNode
     {
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
-
+        if (_AIVehicleLand == null) return;
         NavMeshHit hit;
-
-        if (NavMesh.SamplePosition(
-            randomDirection,
-            out hit,
-            patrolRadius,
-            NavMesh.AllAreas))
-        {
-            _land.MoveTo(hit.position);
-        }
+        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
+            _AIVehicleLand.MoveTo(hit.position);
     }
 }

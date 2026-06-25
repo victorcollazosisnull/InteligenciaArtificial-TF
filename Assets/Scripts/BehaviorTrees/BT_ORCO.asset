@@ -28,7 +28,7 @@ MonoBehaviour:
         (Ver NPCs)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-213.298523,172.450867)"},"ID":8,"Name":"Ve
         enemy \u2192 perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-125.298523,146.450867)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-4.999939,116)"},"ID":10,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(6.10351563E-05,150)"},"ID":11,"Name":"Move
-        To Target","Instant":true,"SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(130.000061,150)"},"ID":12,"Name":"Attack
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(130.000061,150)"},"ID":12,"Name":"Attack
         Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
         enemy \u2192 atacar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-90,150)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":15,"Name":"Attack

@@ -27,7 +27,6 @@ public class AICharacterActionLandHada : AICharacterActionLand
 
         if (distance <= protectionRange)
         {
-            StopMoving();
             //healthHada.CastShieldOn(ally);
             Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo mágico!");
             return true;

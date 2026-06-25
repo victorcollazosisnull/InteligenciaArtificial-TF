@@ -1,23 +1,26 @@
 // ActionNode.cs
-// Clase base de todos los nodos. 
-// FIX: cachea HealthBase directamente para no depender del orden de Awake().
+// REFACTOR: ahora cachea AICharacterVehicleLand para movimiento
+// y AICharacterCombatLand para ataque — separados como en el diagrama del profe.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 public class ActionNode : Action
 {
     protected AIEyeNPC _AIEyeNPC;
-    protected AICharacterActions _AICharacterAction;
+    protected AICharacterAction _AICharacterAction;   // rama acciones
+    protected AICharacterVehicleLand _AIVehicleLand;      // rama movimiento
+    protected AICharacterCombatLand _AICombatLand;       // ataque
     protected Blackboard _Blackboard;
     protected HealthBase _HealthBase;
-
 
     public override void OnAwake()
     {
         base.OnAwake();
         _AIEyeNPC = GetComponent<AIEyeNPC>();
-        _AICharacterAction = GetComponent<AICharacterActions>();
-        _Blackboard = GetComponent<Blackboard>(); 
-        _HealthBase = GetComponent<HealthBase>();      
+        _AICharacterAction = GetComponent<AICharacterAction>();
+        _AIVehicleLand = GetComponent<AICharacterVehicleLand>();
+        _AICombatLand = GetComponent<AICharacterCombatLand>();
+        _Blackboard = GetComponent<Blackboard>();
+        _HealthBase = GetComponent<HealthBase>();
     }
 }
