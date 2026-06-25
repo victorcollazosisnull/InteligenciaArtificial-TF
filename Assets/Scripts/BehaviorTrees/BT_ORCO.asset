@@ -32,12 +32,15 @@ MonoBehaviour:
         Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
         enemy \u2192 atacar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-90,150)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":15,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(332.1325,196.998871)"},"ID":16,"Name":"Tiene
-        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":17,"Name":"Is
-        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":18,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":50},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":19,"Name":"Move
-        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":20,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(664.2418,197.204712)"},"ID":21,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
+        Target","Instant":true,"SingleattackCooldown":1.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.559021,199.314423)"},"ID":16,"Name":"Buscar
+        ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-105.503479,128.376846)"},"ID":17,"Name":"Has
+        Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(103.871468,128.376846)"},"ID":18,"Name":"Move
+        To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(689.2756,196.998871)"},"ID":19,"Name":"Tiene
+        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":20,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":21,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":50},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":22,"Name":"Move
+        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":23,"Name":"Eat
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1021.38538,197.204712)"},"ID":24,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

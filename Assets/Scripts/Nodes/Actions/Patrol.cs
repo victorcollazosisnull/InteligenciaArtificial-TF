@@ -1,4 +1,7 @@
-// Patrol.cs � usa AICharacterVehicleLand para moverse
+// Patrol.cs
+// FIX: eliminado StopMoving() de OnStart().
+// Llamar StopMoving() antes de GenerateNewPoint() causaba
+// un frame de idle visible antes de empezar a moverse.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,8 +13,7 @@ public class Patrol : ActionNode
 
     public override void OnStart()
     {
-        if (_AIVehicleLand != null) _AIVehicleLand.StopMoving();
-        GenerateNewPoint();
+        GenerateNewPoint(); // FIX: directo al punto, sin StopMoving primero
     }
 
     public override TaskStatus OnUpdate()
@@ -26,7 +28,6 @@ public class Patrol : ActionNode
     {
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
-        if (_AIVehicleLand == null) return;
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
             _AIVehicleLand.MoveTo(hit.position);

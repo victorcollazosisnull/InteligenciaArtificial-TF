@@ -28,7 +28,7 @@ MonoBehaviour:
         (interno)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-170.952454,163.207275)"},"ID":8,"Name":"Sequence
         perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-123.084007,137.905914)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-1.65715027,116.161423)"},"ID":10,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(-1.39524078,144.186523)"},"ID":11,"Name":"Move
-        To Target","Instant":true,"SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(125.946953,144.186523)"},"ID":12,"Name":"Attack
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(125.946953,144.186523)"},"ID":12,"Name":"Attack
         Target","Instant":true,"SingleattackCooldown":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(217.404938,156.310425)"},"ID":13,"Name":"Sequence
         atacar directo","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-88.5715256,141.428162)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(87.1426849,135.714233)"},"ID":15,"Name":"Attack
@@ -38,7 +38,7 @@ MonoBehaviour:
         Food","Instant":true,"SinglesearchRadius":40},{"Type":"MoveToFood","NodeData":{"Offset":"(57.3422928,137.839478)"},"ID":19,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(179.153,135.635315)"},"ID":20,"Name":"Eat
         Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(628.934,186.3446)"},"ID":21,"Name":"Buscar
-        ultima posicion conocida","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-107.999413,134.348572)"},"ID":22,"Name":"Has
+        ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-107.999413,134.348572)"},"ID":22,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(113.3922,125.4124)"},"ID":23,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(900.5811,187.973145)"},"ID":24,"Name":"Patrol","Instant":true,"SinglepatrolRadius":12}]}}'
       fieldSerializationData:
