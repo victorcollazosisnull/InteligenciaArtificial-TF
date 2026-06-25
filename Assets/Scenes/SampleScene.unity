@@ -1639,6 +1639,30 @@ PrefabInstance:
       propertyPath: height
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: meshColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: meshColor.g
+      value: 0.63708025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: meshColor.r
+      value: 0.72955966
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: detectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: detectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065359291809738821, guid: 30a51b7a0f075304a882521854cfc29c, type: 3}
+      propertyPath: detectedColor.r
+      value: 0.8932471
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
