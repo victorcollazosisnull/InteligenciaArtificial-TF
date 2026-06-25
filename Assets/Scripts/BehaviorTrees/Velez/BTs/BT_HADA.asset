@@ -21,9 +21,12 @@ MonoBehaviour:
       startIndex: 
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-243.249451,176.733917)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
-        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(40.9118423,182.9072)"},"ID":4,"Name":"En
+        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(17.1023178,182.9072)"},"ID":4,"Name":"En
         peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-100.311829,126.815308)"},"ID":5,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"Patrol","NodeData":{"Offset":"(237.4705,165.814163)"},"ID":7,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(325.797821,190.387726)"},"ID":7,"Name":"Seguir
+        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-108.548279,121.585876)"},"ID":8,"Name":"Ally
+        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(126.689743,121.585876)"},"ID":9,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"Patrol","NodeData":{"Offset":"(570.803345,189.623657)"},"ID":10,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

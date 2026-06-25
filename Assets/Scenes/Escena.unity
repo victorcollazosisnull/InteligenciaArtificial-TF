@@ -1052,6 +1052,7 @@ MonoBehaviour:
   Imortal: 0
   ShowGizmo: 1
   AimOffset: {fileID: 0}
+  tiempoMuerte: 3
   deathParticle: {fileID: 0}
 --- !u!114 &327628581
 MonoBehaviour:
@@ -1424,7 +1425,7 @@ MonoBehaviour:
     m_Bits: 64
   allyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12288
   occlusionLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -4247,6 +4248,7 @@ MonoBehaviour:
   Imortal: 0
   ShowGizmo: 1
   AimOffset: {fileID: 0}
+  tiempoMuerte: 3
   poofParticle: {fileID: 0}
 --- !u!114 &1260622736
 MonoBehaviour:
@@ -5844,6 +5846,7 @@ MonoBehaviour:
   Imortal: 0
   ShowGizmo: 1
   AimOffset: {fileID: 0}
+  tiempoMuerte: 3
   bloodParticle: {fileID: 0}
 --- !u!114 &1919598691
 MonoBehaviour:
