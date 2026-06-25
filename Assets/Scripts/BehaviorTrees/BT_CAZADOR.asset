@@ -47,7 +47,7 @@ MonoBehaviour:
         trampa estrat\u00e9gica","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-105.875443,145.242126)"},"ID":29,"Name":"Has
         Target","Instant":true},{"Type":"PlaceTrap","NodeData":{"Offset":"(97.86737,154.992676)"},"ID":30,"Name":"Place
         Trap","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(862.954,156.164459)"},"ID":31,"Name":"Buscar
-        ultima posicion","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-86.19006,148.095215)"},"ID":32,"Name":"Has
+        ultima posicion","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-86.19006,148.095215)"},"ID":32,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(104.764206,145.065231)"},"ID":33,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1135.5116,155.740753)"},"ID":34,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
       fieldSerializationData:
