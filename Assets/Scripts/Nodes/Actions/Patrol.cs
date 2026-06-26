@@ -13,7 +13,7 @@ public class Patrol : ActionNode
 
     public override void OnStart()
     {
-        GenerateNewPoint(); // FIX: directo al punto, sin StopMoving primero
+        GenerateNewPoint(); 
     }
 
     public override TaskStatus OnUpdate()

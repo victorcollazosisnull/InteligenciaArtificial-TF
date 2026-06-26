@@ -1,0 +1,20 @@
+using BehaviorDesigner.Runtime.Tasks;
+using UnityEngine;
+
+[TaskCategory("BosqueEncantado/Condition")]
+public class IsAllyShieldable : ConditionNode
+{
+    public override TaskStatus OnUpdate()
+    {
+        Transform ally = _AIEyeNPC != null && _AIEyeNPC.Allied != null
+            ? _AIEyeNPC.Allied
+            : (_Blackboard != null ? _Blackboard.allyTarget : null);
+
+        if (ally == null) return TaskStatus.Failure;
+
+        HealthBase hb = ally.GetComponent<HealthBase>();
+        if (hb == null || hb.IsDead) return TaskStatus.Failure;
+
+        return hb.Shield <= 0f ? TaskStatus.Success : TaskStatus.Failure;
+    }
+}

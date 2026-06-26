@@ -20,13 +20,20 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-243.249451,176.733917)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
-        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(17.1023178,182.9072)"},"ID":4,"Name":"En
-        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-100.311829,126.815308)"},"ID":5,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":6,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(325.797821,190.387726)"},"ID":7,"Name":"Seguir
-        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-108.548279,121.585876)"},"ID":8,"Name":"Ally
-        Visible","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(126.689743,121.585876)"},"ID":9,"Name":"Move
-        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"Patrol","NodeData":{"Offset":"(570.803345,189.623657)"},"ID":10,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-685.557251,195.964691)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
+        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-338.4616,202.307678)"},"ID":4,"Name":"Aliado
+        herido \u2192 curar","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-200,130)"},"ID":5,"Name":"Ally
+        Visible","Instant":true},{"Type":"IsAllyInDanger","NodeData":{"Offset":"(-80,130)"},"ID":6,"Name":"Is
+        Ally In Danger","Instant":true,"SinglehealthPercentThreshold":50},{"Type":"MoveToTarget","NodeData":{"Offset":"(40,130)"},"ID":7,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2},{"Type":"HealAlly","NodeData":{"Offset":"(160,130)"},"ID":8,"Name":"Heal
+        Ally","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(55.56386,202.13797)"},"ID":9,"Name":"En
+        peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-61.85033,126.815308)"},"ID":10,"Name":"Is
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":11,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(452.853577,202.307678)"},"ID":12,"Name":"Aliado
+        sin escudo \u2192 proteger","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-177.444183,130)"},"ID":13,"Name":"Ally
+        Visible","Instant":true},{"Type":"IsAllyShieldable","NodeData":{"Offset":"(-57.44422,130)"},"ID":14,"Name":"Is
+        Ally Shieldable","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(62.55578,130)"},"ID":15,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2},{"Type":"CastShield","NodeData":{"Offset":"(182.555817,130)"},"ID":16,"Name":"Cast
+        Shield","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(736.278,204.230774)"},"ID":17,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

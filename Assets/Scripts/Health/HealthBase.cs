@@ -18,6 +18,7 @@ public class HealthBase : MonoBehaviour
 
     protected float health;
     protected float armor;
+    protected float shield;
 
     [Header("Clasificacion")]
     public TypeAgent typeAgent;
@@ -32,6 +33,7 @@ public class HealthBase : MonoBehaviour
     private List<Collider> colliderHide = new List<Collider>();
 
     public bool IsDead => health <= 0f;
+    public float Shield => shield;
     public float HealthPercent
     {
         get
@@ -47,6 +49,7 @@ public class HealthBase : MonoBehaviour
         LoadComponent();
         health = MaxHealth;
         armor = MaxArmor;
+        shield = 0f;
     }
 
     public virtual void LoadComponent()
@@ -69,11 +72,18 @@ public class HealthBase : MonoBehaviour
     {
         if (Imortal) return;
 
-        if (armor > 0)
+        if (shield > 0)
+        {
+            float absorbed = Mathf.Min(shield, damage);
+            shield -= absorbed;
+            damage -= absorbed;
+        }
+
+        if (armor > 0 && damage > 0)
         {
             float absorbed = Mathf.Min(armor, damage);
             armor -= absorbed;
-            damage -= absorbed;  
+            damage -= absorbed;
         }
 
         if (damage > 0)
@@ -81,6 +91,18 @@ public class HealthBase : MonoBehaviour
 
         UpdateHealthBar();
         if (IsDead) Death();
+    }
+
+    public virtual void Heal(float amount)
+    {
+        health = Mathf.Min(MaxHealth, health + amount);
+        UpdateHealthBar();
+    }
+
+    public virtual void AddShield(float amount)
+    {
+        shield += amount;
+        UpdateHealthBar();
     }
 
     public virtual void Death() { }
@@ -93,6 +115,7 @@ public class HealthBase : MonoBehaviour
         foreach (var c in colliderHide) if (c != null) c.enabled = true;
         health = MaxHealth;
         armor = MaxArmor;
+        shield = 0f;
         UpdateHealthBar();
         gameObject.SetActive(true);
     }
@@ -107,7 +130,7 @@ public class HealthBase : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public bool IsAllied(HealthBase other) => other != null && typeAgent == other.typeAgent;
+    public virtual bool IsAllied(HealthBase other) => other != null && typeAgent == other.typeAgent;
 
     public void UpdateHealthBar()
     {

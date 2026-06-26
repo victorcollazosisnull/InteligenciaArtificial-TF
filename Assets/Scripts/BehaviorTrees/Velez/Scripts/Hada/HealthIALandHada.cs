@@ -1,5 +1,5 @@
 // HealthIALandHada.cs
-// Sistema de vida específico del Hada.
+// Sistema de vida especï¿½fico del Hada.
 // NPC pasivo: no participa en combate.
 
 using UnityEngine;
@@ -11,15 +11,15 @@ public class HealthIALandHada : HealthNoCombat
 
     public override void LoadComponent()
     {
-        // Stats básicos del hada
+        // Stats bï¿½sicos del hada
         MaxHealth = 30f;
         MaxArmor = 20f;
 
-        // Clasificación
+        // Clasificaciï¿½n
         typeAgent = TypeAgent.Hada;
         _Unity = UnitSC.Hada;
 
-        // Inicialización base
+        // Inicializaciï¿½n base
         base.LoadComponent();
     }
 
@@ -30,21 +30,29 @@ public class HealthIALandHada : HealthNoCombat
         if (deathParticle != null)
             Instantiate(deathParticle, transform.position, Quaternion.identity);
 
-        Debug.Log("[Hada] murió.");
+        Debug.Log("[Hada] muriï¿½.");
 
-        // Ejecuta lógica base
+        // Ejecuta lï¿½gica base
         base.Death();
 
         // Como es un NPC pasivo, simplemente se desactiva
         Desactive();
     }
 
-    // ?? DAÑO ?????????????????????????????????????????????
+    public override bool IsAllied(HealthBase other)
+    {
+        if (other == null) return false;
+        return other.typeAgent == TypeAgent.Pato
+            || other.typeAgent == TypeAgent.Unicornio
+            || base.IsAllied(other);
+    }
+
+    // ?? DAï¿½O ?????????????????????????????????????????????
     public override void ApplyDamage(float damage, HealthBase owner = null)
     {
         base.ApplyDamage(damage);
 
-        // Si murió, ejecutar muerte
+        // Si muriï¿½, ejecutar muerte
         if (IsDead)
             Death();
     }
