@@ -29,7 +29,7 @@ MonoBehaviour:
         (interno)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-255.626434,155.159256)"},"ID":9,"Name":"Sequence
         perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-139.328461,154.534348)"},"ID":10,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(3.95824814,121.458038)"},"ID":11,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(1.24993134,152.083191)"},"ID":12,"Name":"Move
-        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(137.916611,152.083572)"},"ID":13,"Name":"Attack
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(137.916611,152.083572)"},"ID":13,"Name":"Attack
         Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(134.998871,161.40889)"},"ID":14,"Name":"Sequence
         atacar directo","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-92.08334,152.083313)"},"ID":15,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(101.249969,149.583328)"},"ID":16,"Name":"Attack
