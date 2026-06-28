@@ -36,4 +36,14 @@ public class NPCAnimator : MonoBehaviour
     {
         animator.SetBool("IsAttacking", false);
     }
+    public void TriggerMeleeAttack()
+    {
+        animator.SetBool("IsRanged", false);
+        animator.SetBool("IsAttacking", true);
+    }
+    public void TriggerRangedAttack()
+    {
+        animator.SetBool("IsRanged", true);
+        animator.SetBool("IsAttacking", true);
+    }
 }

@@ -1,3 +1,5 @@
+// IsTargetInAttackRange.cs
+// FIX: usa enemyTarget en vez de currentTarget como fallback.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -11,10 +13,11 @@ public class IsTargetInAttackRange : ConditionNode
         Transform target = null;
         if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
             target = _AIEyeNPC.Enemy;
-        else if (_Blackboard != null && _Blackboard.currentTarget != null)
-            target = _Blackboard.currentTarget;
+        else if (_Blackboard != null && _Blackboard.enemyTarget != null)
+            target = _Blackboard.enemyTarget;
 
         if (target == null) return TaskStatus.Failure;
+
         return Vector3.Distance(transform.position, target.position) <= attackRange
             ? TaskStatus.Success : TaskStatus.Failure;
     }

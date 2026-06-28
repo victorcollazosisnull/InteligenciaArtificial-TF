@@ -1,4 +1,5 @@
-// Flee.cs — usa AICharacterVehicleLand para moverse
+// Flee.cs
+// FIX: usa enemyTarget en vez de currentTarget como fallback.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,11 +17,12 @@ public class Flee : ActionNode
     {
         _fleeTargetSet = false;
 
+        // FIX: usa enemyTarget en vez de currentTarget
         Transform enemy = null;
         if (_AIEyeNPC != null && _AIEyeNPC.Enemy != null)
             enemy = _AIEyeNPC.Enemy;
-        else if (_Blackboard != null && _Blackboard.currentTarget != null)
-            enemy = _Blackboard.currentTarget;
+        else if (_Blackboard != null && _Blackboard.enemyTarget != null)
+            enemy = _Blackboard.enemyTarget;
 
         if (enemy == null || _AIVehicleLand == null) return;
 

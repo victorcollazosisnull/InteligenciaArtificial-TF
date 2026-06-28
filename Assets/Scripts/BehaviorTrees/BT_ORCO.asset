@@ -22,17 +22,17 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(366.201477,179.450867)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.79833984,142.178116)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-546.2739,202.3548)"},"ID":2,"Name":"En
         peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-88.91201,127.508614)"},"ID":3,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(83.16524,129.761185)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-181.0485,200.091187)"},"ID":5,"Name":"(Ataque
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(83.16524,129.761185)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-181.0485,200.091187)"},"ID":5,"Name":"(Ataque
         unificado)","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-140,130)"},"ID":6,"Name":"Enemy
         Visible","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(97.45203,129.091187)"},"ID":7,"Name":"Selector
         (Ver NPCs)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-213.298523,172.450867)"},"ID":8,"Name":"Ve
         enemy \u2192 perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-125.298523,146.450867)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-4.999939,116)"},"ID":10,"Name":"Is
-        Target In Attack Range","Instant":true,"SingleattackRange":2}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(6.10351563E-05,150)"},"ID":11,"Name":"Move
-        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(130.000061,150)"},"ID":12,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
+        Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(6.10351563E-05,150)"},"ID":11,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(130.000061,150)"},"ID":12,"Name":"Attack
+        Target","Instant":true,"SingleattackCooldown":1.5,"SingleattackRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
         enemy \u2192 atacar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-90,150)"},"ID":14,"Name":"Is
-        Target In Attack Range","Instant":true,"SingleattackRange":2},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":15,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.559021,199.314423)"},"ID":16,"Name":"Buscar
+        Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":15,"Name":"Attack
+        Target","Instant":true,"SingleattackCooldown":1.5,"SingleattackRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.559021,199.314423)"},"ID":16,"Name":"Buscar
         ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-105.503479,128.376846)"},"ID":17,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(103.871468,128.376846)"},"ID":18,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(689.2756,196.998871)"},"ID":19,"Name":"Tiene
