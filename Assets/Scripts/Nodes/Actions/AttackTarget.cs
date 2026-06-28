@@ -1,6 +1,6 @@
 // AttackTarget.cs
-// Detecta si el enemigo es Orco (melee) o presa (ranged) y activa
-// la animacion correcta. Si es ranged, detiene el movimiento para disparar.
+// Ranged: dispara mientras se mueve (Avatar Mask maneja la animacion arriba).
+// Melee: se queda quieto y golpea.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -26,28 +26,17 @@ public class AttackTarget : ActionNode
         Transform enemy = GetCurrentEnemy();
         if (enemy != null)
         {
-            HealthBase targetHealth = enemy.GetComponent<HealthBase>();
-            if (targetHealth != null && targetHealth.typeAgent != TypeAgent.Orco)
+            HealthBase th = enemy.GetComponent<HealthBase>();
+            if (th != null && th.typeAgent != TypeAgent.Orco)
                 _isRanged = true;
         }
 
         if (_npcAnimator != null)
         {
             if (_isRanged)
-            {
-                _npcAnimator.TriggerRangedAttack();
-                // Detiene el movimiento para disparar quieto
-                if (_AIVehicleLand != null) _AIVehicleLand.StopMoving();
-            }
+                _npcAnimator.TriggerRangedAttack(); // activa IsRanged=true
             else
-            {
-                _npcAnimator.TriggerMeleeAttack();
-            }
-        }
-        else
-        {
-            // Fallback para NPCs sin WeaponSwitcher (Orco, Duende)
-            if (_npcAnimator != null) _npcAnimator.TriggerAttack();
+                _npcAnimator.TriggerMeleeAttack();  // activa IsRanged=false
         }
     }
 
@@ -72,9 +61,10 @@ public class AttackTarget : ActionNode
             return TaskStatus.Failure;
         }
 
-        // Si es ranged, mantiene al NPC quieto mientras ataca
-        if (_isRanged && _AIVehicleLand != null)
-            _AIVehicleLand.StopMoving();
+        // Ranged: sigue moviéndose hacia la presa mientras dispara
+        // El Avatar Mask maneja la animacion de disparo en la parte superior
+        if (_isRanged && _AIVehicleLand != null && enemy != null)
+            _AIVehicleLand.MoveTo(enemy.position);
 
         _timer -= Time.deltaTime;
         if (_timer <= 0f)
