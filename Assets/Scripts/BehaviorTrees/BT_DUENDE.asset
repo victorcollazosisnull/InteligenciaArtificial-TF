@@ -29,13 +29,13 @@ MonoBehaviour:
         perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-123.084007,137.905914)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-1.65715027,116.161423)"},"ID":10,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(-1.39524078,144.186523)"},"ID":11,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(125.946953,144.186523)"},"ID":12,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(217.404938,156.310425)"},"ID":13,"Name":"Sequence
+        Target","Instant":true,"SingleattackCooldown":2,"SinglemeleeRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(217.404938,156.310425)"},"ID":13,"Name":"Sequence
         atacar directo","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-88.5715256,141.428162)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(87.1426849,135.714233)"},"ID":15,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(200.751587,176.812454)"},"ID":16,"Name":"Robar
+        Target","Instant":true,"SingleattackCooldown":2,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(200.751587,176.812454)"},"ID":16,"Name":"Robar
         comida al Orco","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-176.331314,141.921143)"},"ID":17,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-64.08629,142.941528)"},"ID":18,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":40},{"Type":"MoveToFood","NodeData":{"Offset":"(57.3422928,137.839478)"},"ID":19,"Name":"Move
+        Food","Instant":true,"SinglesearchRadius":50,"TypeAgentfoodFor":"Orco"},{"Type":"MoveToFood","NodeData":{"Offset":"(57.3422928,137.839478)"},"ID":19,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(179.153,135.635315)"},"ID":20,"Name":"Eat
         Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(628.934,186.3446)"},"ID":21,"Name":"Buscar
         ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-107.999413,134.348572)"},"ID":22,"Name":"Has

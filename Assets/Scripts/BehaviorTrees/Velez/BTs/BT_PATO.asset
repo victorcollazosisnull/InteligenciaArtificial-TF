@@ -28,7 +28,7 @@ MonoBehaviour:
         To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(453.3783,263.694733)"},"ID":8,"Name":"Tiene
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-197.3383,126.430664)"},"ID":9,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-67.3383,126.430664)"},"ID":10,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":20},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":11,"Name":"Move
+        Food","Instant":true,"SinglesearchRadius":20,"TypeAgentfoodFor":"Pato"},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":11,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":12,"Name":"Eat
         Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(747.52,219.527649)"},"ID":13,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'
       fieldSerializationData:

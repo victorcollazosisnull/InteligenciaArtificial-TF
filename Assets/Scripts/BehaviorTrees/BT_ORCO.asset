@@ -38,7 +38,7 @@ MonoBehaviour:
         To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(689.2756,196.998871)"},"ID":19,"Name":"Tiene
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":20,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":21,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":50},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":22,"Name":"Move
+        Food","Instant":true,"SinglesearchRadius":50,"TypeAgentfoodFor":"Orco"},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":22,"Name":"Move
         To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":23,"Name":"Eat
         Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1021.38538,197.204712)"},"ID":24,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]}}'
       fieldSerializationData:
