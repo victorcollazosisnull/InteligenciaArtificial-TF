@@ -8,6 +8,8 @@ public class HealthIALandUnicornio : HealthCombat
 {
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
+    public GameObject healParticle;
+    public GameObject shieldParticle;
 
     protected override void Awake()
     {
@@ -40,9 +42,20 @@ public class HealthIALandUnicornio : HealthCombat
 
         // Ejecuta l�gica base
         base.Death();
+    }
 
-        // NPC pasivo ? solo se desactiva
-        Desactive();
+    public override void Heal(float amount)
+    {
+        base.Heal(amount);
+        if (healParticle != null)
+            Destroy(Instantiate(healParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
+    }
+
+    public override void AddArmor(float amount)
+    {
+        base.AddArmor(amount);
+        if (shieldParticle != null)
+            Destroy(Instantiate(shieldParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
     }
 
     // ?? DANO ?????????????????????????????????????????????

@@ -8,6 +8,8 @@ public class HealthIALandPato : HealthNoCombat
 {
     [Header("Pato - Health Config")]
     public GameObject deathParticle;
+    public GameObject healParticle;
+    public GameObject shieldParticle;
 
     protected override void Awake()
     {
@@ -40,9 +42,6 @@ public class HealthIALandPato : HealthNoCombat
 
         // Ejecuta l�gica base
         base.Death();
-
-        // Como es un NPC pasivo, simplemente se desactiva
-        Desactive();
     }
 
     public override bool IsAllied(HealthBase other)
@@ -51,6 +50,20 @@ public class HealthIALandPato : HealthNoCombat
         return other.typeAgent == TypeAgent.Hada
             || other.typeAgent == TypeAgent.Unicornio
             || base.IsAllied(other);
+    }
+
+    public override void Heal(float amount)
+    {
+        base.Heal(amount);
+        if (healParticle != null)
+            Destroy(Instantiate(healParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
+    }
+
+    public override void AddArmor(float amount)
+    {
+        base.AddArmor(amount);
+        if (shieldParticle != null)
+            Destroy(Instantiate(shieldParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
     }
 
     // ?? DANO ?????????????????????????????????????????????

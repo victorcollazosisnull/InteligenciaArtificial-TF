@@ -474,12 +474,17 @@ MonoBehaviour:
   ShowHealthBar: 0
   MaxHealth: 100
   MaxArmor: 50
+  health: 0
+  armor: 0
   typeAgent: 3
   _Unity: 4
   Imortal: 0
   ShowGizmo: 1
   AimOffset: {fileID: 0}
-  deathParticle: {fileID: 0}
+  tiempoMuerte: 3
+  deathParticle: {fileID: 4460107111957403831, guid: 3c47fa3630fb94d4c9ed2141985a3937, type: 3}
+  healParticle: {fileID: 631748647277983328, guid: e331657d8c867a047be0e22690bf139f, type: 3}
+  shieldParticle: {fileID: 0}
 --- !u!114 &3161509201495509260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +781,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 76111a89c3826ef49881e9cc0bc01a62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5898316595418510391}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 76111a89c3826ef49881e9cc0bc01a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2837846185875492660}
   m_SourcePrefab: {fileID: 100100000, guid: 76111a89c3826ef49881e9cc0bc01a62, type: 3}
 --- !u!4 &391347372357417595 stripped
 Transform:
@@ -809,3 +817,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2837846185875492660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019371455102918849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa3c9e27d49c094ba5a7a69ca9f4107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimator

@@ -7267,6 +7267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato
       objectReference: {fileID: 0}
+    - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: tiempoMuerte
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
