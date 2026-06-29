@@ -1,6 +1,6 @@
 // ActionNode.cs
 // REFACTOR: ahora cachea AICharacterVehicleLand para movimiento
-// y AICharacterCombatLand para ataque — separados como en el diagrama del profe.
+// y AICharacterCombatLand para ataque â€” separados como en el diagrama del profe.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 

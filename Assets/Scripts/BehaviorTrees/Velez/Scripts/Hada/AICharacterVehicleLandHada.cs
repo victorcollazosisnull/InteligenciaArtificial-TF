@@ -1,4 +1,4 @@
-// AICharacterVehicleLandHada.cs
+ï»¿// AICharacterVehicleLandHada.cs
 // FIX: hereda de AICharacterVehicleLand (no de AICharacterActionLand).
 // Es un script de MOVIMIENTO del Hada, no de acciones.
 // StopMoving() y MoveTo() vienen de AICharacterVehicle.
@@ -6,10 +6,7 @@ using UnityEngine;
 
 public class AICharacterVehicleLandHada : AICharacterVehicleLand
 {
-    [Header("Hada - Configuración de Acciones")]
-    public float protectionRange = 3f;
-    public float fleeDistance = 15f;
-
+    private int protectionRange = 5; // Rango de protecciÃ³n en unidades
     private HealthIALandHada healthHada;
 
     public override void LoadComponent()
@@ -25,8 +22,8 @@ public class AICharacterVehicleLandHada : AICharacterVehicleLand
         float distance = Vector3.Distance(transform.position, ally.transform.position);
         if (distance <= protectionRange)
         {
-            StopMoving();  // OK: viene de AICharacterVehicle
-            Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo mágico!");
+            StopMoving();  
+            Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo mï¿½gico!");
             return true;
         }
         return false;

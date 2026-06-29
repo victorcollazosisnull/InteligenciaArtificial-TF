@@ -8,7 +8,7 @@ public enum TargetFaction { Enemy, Ally }
 public class MoveToTarget : ActionNode
 {
     public TargetFaction targetToFollow;
-    public float stopDistance = 2.0f;
+    public float stopDistance = 2f;
 
     public override TaskStatus OnUpdate()
     {
@@ -50,6 +50,7 @@ public class MoveToTarget : ActionNode
         }
 
         float dist = Vector3.Distance(transform.position, target.position);
+
         if (dist <= stopDistance) { _AIVehicleLand.StopMoving(); return TaskStatus.Success; }
 
         _AIVehicleLand.MoveTo(target.position);

@@ -1,5 +1,5 @@
 // HealthIALandPato.cs
-// Sistema de vida específico del Pato.
+// Sistema de vida especï¿½fico del Pato.
 // NPC pasivo: no participa en combate.
 
 using UnityEngine;
@@ -9,17 +9,23 @@ public class HealthIALandPato : HealthNoCombat
     [Header("Pato - Health Config")]
     public GameObject deathParticle;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        armor = 0f;
+    }
+
     public override void LoadComponent()
     {
-        // Stats básicos del pato
-        MaxHealth = 40f;
-        MaxArmor = 0f;
+        // Stats bï¿½sicos del pato
+        MaxHealth = 70f;
+        MaxArmor = 30f;
 
-        // Clasificación
+        // Clasificaciï¿½n
         typeAgent = TypeAgent.Pato;
         _Unity = UnitSC.Pato;
 
-        // Inicialización base
+        // Inicializaciï¿½n base
         base.LoadComponent();
     }
 
@@ -30,13 +36,21 @@ public class HealthIALandPato : HealthNoCombat
         if (deathParticle != null)
             Instantiate(deathParticle, transform.position, Quaternion.identity);
 
-        Debug.Log("[Pato] murió.");
+        Debug.Log("[Pato] muriï¿½.");
 
-        // Ejecuta lógica base
+        // Ejecuta lï¿½gica base
         base.Death();
 
         // Como es un NPC pasivo, simplemente se desactiva
         Desactive();
+    }
+
+    public override bool IsAllied(HealthBase other)
+    {
+        if (other == null) return false;
+        return other.typeAgent == TypeAgent.Hada
+            || other.typeAgent == TypeAgent.Unicornio
+            || base.IsAllied(other);
     }
 
     // ?? DANO ?????????????????????????????????????????????
@@ -44,7 +58,7 @@ public class HealthIALandPato : HealthNoCombat
     {
         base.ApplyDamage(damage);
 
-        // Si murió, ejecutar muerte
+        // Si muriï¿½, ejecutar muerte
         if (IsDead)
             Death();
     }
