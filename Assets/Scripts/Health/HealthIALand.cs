@@ -1,8 +1,6 @@
 // HealthIALand.cs
-// Clase intermedia para NPCs terrestres de combate.
-// Hereda de HealthCombat y agrega la gestion del NavMeshAgent.
-// FIX: Death() ahora desactiva el BehaviorTree y espera X segundos
-// antes de desactivar el NPC completo, permitiendo animacion de muerte.
+// FIX: Death() desactiva el Collider para que otros NPCs
+// puedan pasar por encima del cadáver sin bloquearse.
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -14,7 +12,7 @@ public class HealthIALand : HealthCombat
     public NavMeshAgent Agent => agent;
 
     [Header("Muerte")]
-    public float tiempoMuerte = 3f; // segundos antes de desactivar el NPC
+    public float tiempoMuerte = 3f;
 
     public override void LoadComponent()
     {
@@ -25,15 +23,17 @@ public class HealthIALand : HealthCombat
     public override void Death()
     {
         // 1. Detiene el NavMeshAgent
-        if (agent != null)
-            agent.enabled = false;
+        if (agent != null) agent.enabled = false;
 
-        // 2. Desactiva el BehaviorTree — el NPC deja de pensar
+        // 2. Desactiva el BehaviorTree
         BehaviorTree bt = GetComponent<BehaviorTree>();
-        if (bt != null)
-            bt.enabled = false;
+        if (bt != null) bt.enabled = false;
 
-        // 3. Espera X segundos y desactiva el NPC (da tiempo a la animacion)
+        // 3. FIX: Desactiva el Collider para no bloquear el paso
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = false;
+
+        // 4. Espera y desactiva el NPC
         StartCoroutine(DesactivarDespues(tiempoMuerte));
 
         base.Death();
@@ -50,19 +50,23 @@ public class HealthIALand : HealthCombat
         transform.position = spawnPoint;
 
         BehaviorTree bt = GetComponent<BehaviorTree>();
-        if (bt != null)
-            bt.enabled = true;
+        if (bt != null) bt.enabled = true;
 
-        if (agent != null)
-            agent.enabled = true;
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = true;
+
+        if (agent != null) agent.enabled = true;
 
         Active();
     }
 
     public override void Active()
     {
-        if (agent != null)
-            agent.enabled = true;
+        if (agent != null) agent.enabled = true;
+
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = true;
+
         base.Active();
     }
 

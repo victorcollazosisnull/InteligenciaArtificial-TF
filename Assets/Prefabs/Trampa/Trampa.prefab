@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapBehavior
   damage: 100
+  tickInterval: 1.5
+  lifetime: 30
 --- !u!65 &1010390632348108604
 BoxCollider:
   m_ObjectHideFlags: 0

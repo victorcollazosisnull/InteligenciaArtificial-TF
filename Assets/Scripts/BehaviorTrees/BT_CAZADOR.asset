@@ -31,10 +31,10 @@ MonoBehaviour:
         perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-139.328461,154.534348)"},"ID":11,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(3.95824814,121.458038)"},"ID":12,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(1.24993134,152.083191)"},"ID":13,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(137.916611,152.083572)"},"ID":14,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(134.998871,161.40889)"},"ID":15,"Name":"Sequence
+        Target","Instant":true,"SingleattackCooldown":2.5,"SinglemeleeRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(134.998871,161.40889)"},"ID":15,"Name":"Sequence
         atacar directo","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-92.08334,152.083313)"},"ID":16,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(101.249969,149.583328)"},"ID":17,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(286.4651,163.48172)"},"ID":18,"Name":"Cazar
+        Target","Instant":true,"SingleattackCooldown":2.5,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(286.4651,163.48172)"},"ID":18,"Name":"Cazar
         presa (pato/unicornio) ","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-151.954849,152.136963)"},"ID":19,"Name":"Enemy
         Visible","Instant":true},{"Type":"IsEnemyOfType","NodeData":{"Offset":"(-1.66631889,146.111084)","WatchedFields":["targetTypes"]},"ID":20,"Name":"Is
         Enemy Of Type","Instant":true,"TypeAgent[]targetTypes":["Pato","Unicornio"]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(147.1937,151.632813)"},"ID":21,"Name":"Selector
@@ -42,10 +42,10 @@ MonoBehaviour:
         perseguir presa","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-137.499985,150)"},"ID":23,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(0,120)"},"ID":24,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":20}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(2.50001717,150)"},"ID":25,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":5},{"Type":"AttackTarget","NodeData":{"Offset":"(135,150)"},"ID":26,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(169.1667,150)"},"ID":27,"Name":"Sequence
+        Target","Instant":true,"SingleattackCooldown":1.5,"SinglemeleeRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(169.1667,150)"},"ID":27,"Name":"Sequence
         atacar presa","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-73.02328,161.2207)"},"ID":28,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":20},{"Type":"AttackTarget","NodeData":{"Offset":"(82.32568,157.499878)"},"ID":29,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(767.23645,156.164459)"},"ID":30,"Name":"Buscar
+        Target","Instant":true,"SingleattackCooldown":1.5,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(767.23645,156.164459)"},"ID":30,"Name":"Buscar
         ultima posicion","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-86.19006,148.095215)"},"ID":31,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(104.764206,145.065231)"},"ID":32,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1039.79407,155.740753)"},"ID":33,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}}'

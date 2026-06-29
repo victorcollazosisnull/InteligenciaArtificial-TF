@@ -1,6 +1,7 @@
 // AttackTarget.cs
-// Ranged: dispara mientras se mueve (Avatar Mask maneja la animacion arriba).
-// Melee: se queda quieto y golpea.
+// FIX: si es melee y el enemigo sale del rango, retorna Failure
+// para que el BT vuelva a perseguirlo.
+// Ranged sigue moviéndose hacia la presa mientras dispara.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ using UnityEngine;
 public class AttackTarget : ActionNode
 {
     public float attackCooldown = 1.5f;
+    public float meleeRange = 2.5f;  // rango para considerar "fuera de melee"
+
     private float _timer;
     private NPCAnimator _npcAnimator;
     private bool _isRanged;
@@ -33,10 +36,8 @@ public class AttackTarget : ActionNode
 
         if (_npcAnimator != null)
         {
-            if (_isRanged)
-                _npcAnimator.TriggerRangedAttack(); // activa IsRanged=true
-            else
-                _npcAnimator.TriggerMeleeAttack();  // activa IsRanged=false
+            if (_isRanged) _npcAnimator.TriggerRangedAttack();
+            else _npcAnimator.TriggerMeleeAttack();
         }
     }
 
@@ -61,10 +62,23 @@ public class AttackTarget : ActionNode
             return TaskStatus.Failure;
         }
 
-        // Ranged: sigue moviéndose hacia la presa mientras dispara
-        // El Avatar Mask maneja la animacion de disparo en la parte superior
-        if (_isRanged && _AIVehicleLand != null && enemy != null)
-            _AIVehicleLand.MoveTo(enemy.position);
+        float dist = Vector3.Distance(transform.position, enemy.position);
+
+        if (_isRanged)
+        {
+            // Ranged: sigue al enemigo mientras dispara
+            if (_AIVehicleLand != null)
+                _AIVehicleLand.MoveTo(enemy.position);
+        }
+        else
+        {
+            // Melee: si el enemigo se alejó, deja de atacar y vuelve a perseguir
+            if (dist > meleeRange)
+            {
+                if (_npcAnimator != null) _npcAnimator.StopAttack();
+                return TaskStatus.Failure;
+            }
+        }
 
         _timer -= Time.deltaTime;
         if (_timer <= 0f)

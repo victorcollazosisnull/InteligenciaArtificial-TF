@@ -29,10 +29,10 @@ MonoBehaviour:
         enemy \u2192 perseguir","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-125.298523,146.450867)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-4.999939,116)"},"ID":10,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(6.10351563E-05,150)"},"ID":11,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(130.000061,150)"},"ID":12,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5,"SingleattackRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
+        Target","Instant":true,"SingleattackCooldown":3,"SinglemeleeRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":13,"Name":"Ve
         enemy \u2192 atacar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-90,150)"},"ID":14,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":15,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":1.5,"SingleattackRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.559021,199.314423)"},"ID":16,"Name":"Buscar
+        Target","Instant":true,"SingleattackCooldown":3,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.559021,199.314423)"},"ID":16,"Name":"Buscar
         ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-105.503479,128.376846)"},"ID":17,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(103.871468,128.376846)"},"ID":18,"Name":"Move
         To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(689.2756,196.998871)"},"ID":19,"Name":"Tiene
