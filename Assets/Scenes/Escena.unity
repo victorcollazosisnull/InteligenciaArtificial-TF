@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Food
   nutritionValue: 100
   foodType: Generico
+  targetAgent: 2
 --- !u!65 &38019384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -484,6 +485,10 @@ PrefabInstance:
     - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_Name
       value: IA_Pato (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
@@ -1408,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
       value: 30
@@ -1530,6 +1539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Food
   nutritionValue: 100
   foodType: Generico
+  targetAgent: 2
 --- !u!65 &573913709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1674,6 +1684,10 @@ PrefabInstance:
     - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_Name
       value: IA_Pato (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
@@ -1900,7 +1914,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701586847}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
@@ -2417,6 +2431,10 @@ PrefabInstance:
     - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_Name
       value: IA_Pato (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
@@ -2944,6 +2962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
       value: 30
@@ -3009,6 +3031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
       value: 30
@@ -3056,6 +3082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Food
   nutritionValue: 100
   foodType: Generico
+  targetAgent: 2
 --- !u!65 &1098606164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3313,6 +3340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
       value: 30
@@ -3360,6 +3391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Food
   nutritionValue: 100
   foodType: Generico
+  targetAgent: 2
 --- !u!65 &1188527735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4226,6 +4258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IA_Pato (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
       value: 30
@@ -4767,6 +4803,10 @@ PrefabInstance:
     - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_Name
       value: IA_Pato (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471579909679820477, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7196931635530915284, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: MaxArmor
@@ -5747,6 +5787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Food
   nutritionValue: 100
   foodType: Generico
+  targetAgent: 2
 --- !u!65 &2132663416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5999,7 +6040,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1377702485481886474, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.59
+      value: -3.57
       objectReference: {fileID: 0}
     - target: {fileID: 1377702485481886474, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6007,7 +6048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377702485481886474, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.13
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 1377702485481886474, guid: 873fd9b84b6453a4f9b1b57579472755, type: 3}
       propertyPath: m_LocalRotation.w

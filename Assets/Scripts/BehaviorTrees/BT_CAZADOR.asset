@@ -36,7 +36,7 @@ MonoBehaviour:
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(101.249969,149.583328)"},"ID":17,"Name":"Attack
         Target","Instant":true,"SingleattackCooldown":2.5,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(286.4651,163.48172)"},"ID":18,"Name":"Cazar
         presa (pato/unicornio) ","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-151.954849,152.136963)"},"ID":19,"Name":"Enemy
-        Visible","Instant":true},{"Type":"IsEnemyOfType","NodeData":{"Offset":"(-1.66631889,146.111084)","WatchedFields":["targetTypes"]},"ID":20,"Name":"Is
+        Visible","Instant":true},{"Type":"IsEnemyOfType","NodeData":{"Offset":"(-1.66631889,146.111084)"},"ID":20,"Name":"Is
         Enemy Of Type","Instant":true,"TypeAgent[]targetTypes":["Pato","Unicornio"]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(147.1937,151.632813)"},"ID":21,"Name":"Selector
         (interno)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-192.344925,162.195114)"},"ID":22,"Name":"Sequence
         perseguir presa","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-137.499985,150)"},"ID":23,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(0,120)"},"ID":24,"Name":"Is
