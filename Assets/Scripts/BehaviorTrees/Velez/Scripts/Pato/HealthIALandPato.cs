@@ -9,11 +9,17 @@ public class HealthIALandPato : HealthNoCombat
     [Header("Pato - Health Config")]
     public GameObject deathParticle;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        armor = 0f;
+    }
+
     public override void LoadComponent()
     {
         // Stats b�sicos del pato
-        MaxHealth = 40f;
-        MaxArmor = 0f;
+        MaxHealth = 70f;
+        MaxArmor = 30f;
 
         // Clasificaci�n
         typeAgent = TypeAgent.Pato;

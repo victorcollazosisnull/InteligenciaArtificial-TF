@@ -54,6 +54,6 @@ public class MoveToTarget : ActionNode
         if (dist <= stopDistance) { _AIVehicleLand.StopMoving(); return TaskStatus.Success; }
 
         _AIVehicleLand.MoveTo(target.position);
-        return TaskStatus.Success;
+        return TaskStatus.Running;
     }
 }

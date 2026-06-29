@@ -3,7 +3,7 @@ using UnityEngine;
 public class AICharacterActionLandHada : AICharacterActionLand
 {
     [Header("Hada - Configuraci�n")]
-    public float protectionRange = 3f;
+    public float protectionRange = 1.5f;
     public float fleeDistance = 15f;
     public float shieldAmount = 30f;
     public float healAmount = 25f;
@@ -23,7 +23,7 @@ public class AICharacterActionLandHada : AICharacterActionLand
         float distance = Vector3.Distance(transform.position, ally.transform.position);
         if (distance > protectionRange) return false;
 
-        ally.AddShield(shieldAmount);
+        ally.AddArmor(shieldAmount);
         Debug.Log($"[Hada] Escudo m�gico lanzado sobre {ally.name}!");
         return true;
     }
@@ -47,7 +47,7 @@ public class AICharacterActionLandHada : AICharacterActionLand
         float distance = Vector3.Distance(transform.position, ally.transform.position);
         if (distance <= protectionRange)
         {
-            ally.AddShield(shieldAmount);
+            ally.AddArmor(shieldAmount);
             Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo m�gico!");
             return true;
         }

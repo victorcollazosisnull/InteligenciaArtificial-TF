@@ -16,9 +16,8 @@ public class HealthBase : MonoBehaviour
     public float MaxHealth = 100f;
     public float MaxArmor = 50f;
 
-    protected float health;
-    protected float armor;
-    protected float shield;
+    [SerializeField] protected float health;
+    [SerializeField] protected float armor;
 
     [Header("Clasificacion")]
     public TypeAgent typeAgent;
@@ -33,7 +32,8 @@ public class HealthBase : MonoBehaviour
     private List<Collider> colliderHide = new List<Collider>();
 
     public bool IsDead => health <= 0f;
-    public float Shield => shield;
+
+    public float Armor => armor;
     public float HealthPercent
     {
         get
@@ -49,7 +49,6 @@ public class HealthBase : MonoBehaviour
         LoadComponent();
         health = MaxHealth;
         armor = MaxArmor;
-        shield = 0f;
     }
 
     public virtual void LoadComponent()
@@ -72,13 +71,6 @@ public class HealthBase : MonoBehaviour
     {
         if (Imortal) return;
 
-        if (shield > 0)
-        {
-            float absorbed = Mathf.Min(shield, damage);
-            shield -= absorbed;
-            damage -= absorbed;
-        }
-
         if (armor > 0 && damage > 0)
         {
             float absorbed = Mathf.Min(armor, damage);
@@ -99,9 +91,9 @@ public class HealthBase : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public virtual void AddShield(float amount)
+    public virtual void AddArmor(float amount)
     {
-        shield += amount;
+        armor = Mathf.Min(MaxArmor, armor + amount);
         UpdateHealthBar();
     }
 
@@ -115,7 +107,6 @@ public class HealthBase : MonoBehaviour
         foreach (var c in colliderHide) if (c != null) c.enabled = true;
         health = MaxHealth;
         armor = MaxArmor;
-        shield = 0f;
         UpdateHealthBar();
         gameObject.SetActive(true);
     }

@@ -1,5 +1,5 @@
 // HealthIALandUnicornio.cs
-// Sistema de vida específico del Unicornio.
+// Sistema de vida especï¿½fico del Unicornio.
 // NPC pasivo: no participa en combate.
 
 using UnityEngine;
@@ -9,30 +9,36 @@ public class HealthIALandUnicornio : HealthCombat
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        armor = 0f;
+    }
+
     public override void LoadComponent()
     {
         // Stats del unicornio
         MaxHealth = 150f;
         MaxArmor = 30f;
 
-        // Clasificación
+        // Clasificaciï¿½n
         typeAgent = TypeAgent.Unicornio;
         _Unity = UnitSC.Unicornio;
 
-        // Inicialización base
+        // Inicializaciï¿½n base
         base.LoadComponent();
     }
 
     // ?? MUERTE ???????????????????????????????????????????
     public override void Death()
     {
-        // Partículas opcionales
+        // Partï¿½culas opcionales
         if (deathParticle != null)
             Instantiate(deathParticle, transform.position, Quaternion.identity);
 
-        Debug.Log("[Unicornio] murió.");
+        Debug.Log("[Unicornio] muriï¿½.");
 
-        // Ejecuta lógica base
+        // Ejecuta lï¿½gica base
         base.Death();
 
         // NPC pasivo ? solo se desactiva
@@ -44,7 +50,7 @@ public class HealthIALandUnicornio : HealthCombat
     {
         base.ApplyDamage(damage);
 
-        // Si la vida llegó a 0, morir
+        // Si la vida llegï¿½ a 0, morir
         if (IsDead)
             Death();
     }

@@ -15,6 +15,6 @@ public class IsAllyShieldable : ConditionNode
         HealthBase hb = ally.GetComponent<HealthBase>();
         if (hb == null || hb.IsDead) return TaskStatus.Failure;
 
-        return hb.Shield <= 0f ? TaskStatus.Success : TaskStatus.Failure;
+        return hb.Armor < hb.MaxArmor ? TaskStatus.Success : TaskStatus.Failure;
     }
 }
