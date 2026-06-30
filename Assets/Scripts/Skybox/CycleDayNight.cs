@@ -33,6 +33,10 @@ public class CycleDayNight : MonoBehaviour
         timer = (timer + Time.deltaTime) % cycleDuration;
         float timePercent = timer / cycleDuration;
 
+        // FIX: sincroniza el TimeManager para que el BT del Orco sepa si es de noche
+        if (TimeManager.Instance != null)
+            TimeManager.Instance.SetTimePercent(timePercent);
+
         // 2. Rotar el sol de forma continua
         float angle = timePercent * 360f;
         sun.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
@@ -48,11 +52,7 @@ public class CycleDayNight : MonoBehaviour
         // 3. MÁQUINA DE TIEMPO ULTRA SUAVE (4 fases fijas de 25% de la duración del día cada una)
         if (timePercent < 0.25f)
         {
-            // FASE 1: De la Noche al Día (Amanecer suave)
-            // t va de 0 a 1 en esta sección
             float t = timePercent / 0.25f;
-
-            // Pasamos primero por el atardecer/amanecer antes de llegar al día pleno
             if (t < 0.5f)
             {
                 float subT = t / 0.5f;
@@ -76,7 +76,6 @@ public class CycleDayNight : MonoBehaviour
         }
         else if (timePercent < 0.5f)
         {
-            // FASE 2: Pleno Día constante
             finalZenith = diaZenith;
             finalHorizon = diaHorizon;
             finalFog = diaFog;
@@ -86,12 +85,9 @@ public class CycleDayNight : MonoBehaviour
         }
         else if (timePercent < 0.75f)
         {
-            // FASE 3: Del Día a la Noche pasando por Atardecer (¡Aquí se arregla el salto!)
             float t = (timePercent - 0.5f) / 0.25f;
-
             if (t < 0.5f)
             {
-                // Primera mitad: Transición suave del Día al Atardecer
                 float subT = t / 0.5f;
                 finalZenith = Color.Lerp(diaZenith, atardecerZenith, subT);
                 finalHorizon = Color.Lerp(diaHorizon, atardecerHorizon, subT);
@@ -102,7 +98,6 @@ public class CycleDayNight : MonoBehaviour
             }
             else
             {
-                // Segunda mitad: Transición suave del Atardecer a la Noche oscura
                 float subT = (t - 0.5f) / 0.5f;
                 finalZenith = Color.Lerp(atardecerZenith, nocheZenith, subT);
                 finalHorizon = Color.Lerp(atardecerHorizon, nocheHorizon, subT);
@@ -114,7 +109,6 @@ public class CycleDayNight : MonoBehaviour
         }
         else
         {
-            // FASE 4: Plena Noche constante
             finalZenith = nocheZenith;
             finalHorizon = nocheHorizon;
             finalFog = nocheFog;
@@ -123,7 +117,6 @@ public class CycleDayNight : MonoBehaviour
             tAtmosphere = 1.0f;
         }
 
-        // 4. Aplicar los valores finales calculados matemáticamente
         sun.intensity = finalIntensity;
 
         if (skybox != null)
