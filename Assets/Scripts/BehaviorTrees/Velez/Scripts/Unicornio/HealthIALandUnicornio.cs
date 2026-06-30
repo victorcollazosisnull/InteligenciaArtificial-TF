@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-public class HealthIALandUnicornio : HealthCombat
+public class HealthIALandUnicornio : HealthIALand
 {
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
@@ -19,15 +19,12 @@ public class HealthIALandUnicornio : HealthCombat
 
     public override void LoadComponent()
     {
-        // Stats del unicornio
         MaxHealth = 150f;
-        MaxArmor = 30f;
+        MaxArmor = 50f;
 
-        // Clasificaci�n
         typeAgent = TypeAgent.Unicornio;
         _Unity = UnitSC.Unicornio;
 
-        // Inicializaci�n base
         base.LoadComponent();
     }
 
