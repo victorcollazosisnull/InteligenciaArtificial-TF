@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class AICharacterVehicleLandUnicorn : AICharacterVehicleLand
 {
-    private float _defaultSpeed;
+    public float _defaultSpeed;
 
     public override void LoadComponent()
     {
