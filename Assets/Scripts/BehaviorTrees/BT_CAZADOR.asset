@@ -20,7 +20,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-861.2898,161.731415)"},"ID":2,"Name":"Peligro-OrcoCerca\u2192
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.5573,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-861.2898,161.731415)"},"ID":2,"Name":"Peligro-OrcoCerca\u2192
         huir/poner trampa","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-140.979141,145.304825)"},"ID":3,"Name":"Is
         Danger Health Node","Instant":true},{"Type":"PlaceTrap","NodeData":{"Offset":"(0.8575649,151.427246)"},"ID":4,"Name":"Place
         Trap","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(131.469727,154.488525)"},"ID":5,"Name":"Flee","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-430.733521,159.01413)"},"ID":6,"Name":"Ve
@@ -37,7 +37,7 @@ MonoBehaviour:
         Target","Instant":true,"SingleattackCooldown":2.5,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(286.4651,163.48172)"},"ID":18,"Name":"Cazar
         presa (pato/unicornio) ","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-151.954849,152.136963)"},"ID":19,"Name":"Enemy
         Visible","Instant":true},{"Type":"IsEnemyOfType","NodeData":{"Offset":"(-1.66631889,146.111084)"},"ID":20,"Name":"Is
-        Enemy Of Type","Instant":true,"TypeAgent[]targetTypes":["Pato","Unicornio"]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(147.1937,151.632813)"},"ID":21,"Name":"Selector
+        Enemy Of Type","Instant":true,"TypeAgent[]targetTypes":["Pato","Unicornio"]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(146.360352,151.632813)"},"ID":21,"Name":"Selector
         (interno)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-192.344925,162.195114)"},"ID":22,"Name":"Sequence
         perseguir presa","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-137.499985,150)"},"ID":23,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(0,120)"},"ID":24,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":20}]},{"Type":"MoveToTarget","NodeData":{"Offset":"(2.50001717,150)"},"ID":25,"Name":"Move
