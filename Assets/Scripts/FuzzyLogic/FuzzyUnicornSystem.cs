@@ -12,15 +12,20 @@ public class FuzzyUnicornSystem
         float medio = FuzzyMembership.Triangle(distance, 5, 15, 25);
         float lejos = FuzzyMembership.Trapezoid(distance, 18, 30, 100, 100);
 
+        float enemigoDebil  = FuzzyMembership.Trapezoid(enemyHealthPercent, 0, 0, 30, 50);
+        float enemigoFuerte = FuzzyMembership.Trapezoid(enemyHealthPercent, 50, 70, 100, 100);
+
         float solo  = FuzzyMembership.Trapezoid(nearbyAllies, 0, 0, 0, 2);
         float grupo = FuzzyMembership.Trapezoid(nearbyAllies, 2, 4, 10, 10);
 
         float huir = Mathf.Min(saludBaja, Mathf.Max(cerca, medio));
 
         float cautela = Mathf.Max(saludMedia, lejos);
+        cautela = Mathf.Max(cautela, enemigoFuerte * 0.4f);
 
         float atacar = saludAlta;
         atacar = Mathf.Max(atacar, Mathf.Min(saludAlta, Mathf.Max(cerca, medio)));
+        atacar = Mathf.Max(atacar, Mathf.Min(enemigoDebil, Mathf.Max(cerca, medio)));
         atacar *= (1f - saludBaja);
 
         float atacarFinal = Mathf.Clamp01(atacar * (1f + grupo * 0.4f));
