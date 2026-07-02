@@ -54,7 +54,7 @@ public class TrapBehavior : MonoBehaviour
 
         HealthBase hp = other.GetComponent<HealthBase>();
         if (hp == null) return;
-        if (hp.typeAgent != TypeAgent.Orco) return;
+        if (hp.typeAgent != TypeAgent.Orco || hp.typeAgent != TypeAgent.Unicornio) return;
 
         _targetInside = hp;
         _tickTimer = 0f; // aplica daño inmediatamente al entrar
@@ -65,7 +65,7 @@ public class TrapBehavior : MonoBehaviour
     {
         HealthBase hp = other.GetComponent<HealthBase>();
         if (hp == null) return;
-        if (hp.typeAgent != TypeAgent.Orco) return;
+        if (hp.typeAgent != TypeAgent.Orco || hp.typeAgent != TypeAgent.Unicornio) return;
 
         _targetInside = null;
         Debug.Log("[TRAMPA] Orco salió de la trampa.");

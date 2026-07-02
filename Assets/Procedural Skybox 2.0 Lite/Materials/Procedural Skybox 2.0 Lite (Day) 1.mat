@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ENABLECLOUDS_ON
-  - _ENABLESTARS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -67,7 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AtmosphereThickness: 0.6
+    - _AtmosphereThickness: 1.1086749
     - _BumpScale: 1
     - _CloudAnisotropy: 0.541
     - _CloudBaseHeight: 0.25
@@ -83,7 +82,7 @@ Material:
     - _DstBlend: 0
     - _EnableClouds: 1
     - _EnableMoon: 0
-    - _EnableStars: 0
+    - _EnableStars: 0.6739753
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -119,8 +118,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
-    - _HorizonColor: {r: 0.5093005, g: 0.7530584, b: 0.990566, a: 1}
-    - _HorizonFogColor: {r: 0.7, g: 0.85, b: 1, a: 1}
-    - _ZenithColor: {r: 0, g: 0.5, b: 1, a: 1}
+    - _HorizonColor: {r: 0.53903705, g: 0.29451853, b: 0.17716873, a: 1}
+    - _HorizonFogColor: {r: 0.44383216, g: 0.22648233, b: 0.1995424, a: 1}
+    - _ZenithColor: {r: 0.11780742, g: 0.09063869, b: 0.23584363, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
