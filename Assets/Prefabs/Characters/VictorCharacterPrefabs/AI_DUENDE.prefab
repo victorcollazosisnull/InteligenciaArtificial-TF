@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8b4f7c74bd25342af31c474f5b05aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandDuende
+  patrolRadius: 10
 --- !u!114 &3146556056592941170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +545,7 @@ MonoBehaviour:
   ShowGizmo: 1
   AimOffset: {fileID: 0}
   tiempoMuerte: 3
-  poofParticle: {fileID: 0}
+  poofParticle: {fileID: 4460107111957403831, guid: 3c47fa3630fb94d4c9ed2141985a3937, type: 3}
 --- !u!114 &7930476747084114742
 MonoBehaviour:
   m_ObjectHideFlags: 0

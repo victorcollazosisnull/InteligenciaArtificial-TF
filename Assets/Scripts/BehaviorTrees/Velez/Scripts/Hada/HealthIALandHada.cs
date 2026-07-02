@@ -34,9 +34,6 @@ public class HealthIALandHada : HealthNoCombat
 
         // Ejecuta l�gica base
         base.Death();
-
-        // Como es un NPC pasivo, simplemente se desactiva
-        Desactive();
     }
 
     public override bool IsAllied(HealthBase other)

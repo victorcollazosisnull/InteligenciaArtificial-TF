@@ -9,19 +9,19 @@ public class CheckFuzzyState : Conditional
     public float minValue;
     public float maxValue;
 
-    private FuzzyInferenceController _fuzzyController;
+    private AICharacterActionLandUnicorn _actionUnicorn;
 
     public override void OnAwake()
     {
-        _fuzzyController = GetComponent<FuzzyInferenceController>();
+        _actionUnicorn = GetComponent<AICharacterActionLandUnicorn>();
     }
 
     public override TaskStatus OnUpdate()
     {
-        if (_fuzzyController == null) return TaskStatus.Failure;
+        if (_actionUnicorn == null) return TaskStatus.Failure;
 
         // Accedemos al valor calculado por el motor difuso
-        float currentTendency = _fuzzyController.GetTendenciaActual();
+        float currentTendency = _actionUnicorn.GetTendenciaActual();
 
         if (currentTendency >= minValue && currentTendency <= maxValue)
         {

@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffdf4732d1b93d4abd9785dc79f70b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandOrco
+  patrolRadius: 10
 --- !u!114 &3020209831306455586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +282,7 @@ MonoBehaviour:
   ShowGizmo: 1
   AimOffset: {fileID: 0}
   tiempoMuerte: 3
-  bloodParticle: {fileID: 0}
+  bloodParticle: {fileID: 4460107111957403831, guid: 3c47fa3630fb94d4c9ed2141985a3937, type: 3}
 --- !u!114 &490145121896286821
 MonoBehaviour:
   m_ObjectHideFlags: 0

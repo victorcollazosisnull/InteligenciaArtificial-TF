@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13941791d24ef05458c96ac00926ba89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AICharacterVehicleLandCazador
+  patrolRadius: 10
 --- !u!114 &4941886101592238800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ MonoBehaviour:
   ShowGizmo: 1
   AimOffset: {fileID: 0}
   tiempoMuerte: 3
-  deathParticle: {fileID: 0}
+  deathParticle: {fileID: 4460107111957403831, guid: 3c47fa3630fb94d4c9ed2141985a3937, type: 3}
 --- !u!114 &7462117114349271857
 MonoBehaviour:
   m_ObjectHideFlags: 0

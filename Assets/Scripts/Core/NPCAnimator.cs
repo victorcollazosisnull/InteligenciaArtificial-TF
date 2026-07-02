@@ -59,4 +59,12 @@ public class NPCAnimator : MonoBehaviour
         animator.SetBool("IsRanged", true);
         animator.SetBool("IsAttacking", true);
     }
+    public void CharacterEating()
+    {
+        animator.SetBool("IsEating", true);
+    }
+    public void StopEating()
+    {
+        animator.SetBool("IsEating", false);
+    }
 }

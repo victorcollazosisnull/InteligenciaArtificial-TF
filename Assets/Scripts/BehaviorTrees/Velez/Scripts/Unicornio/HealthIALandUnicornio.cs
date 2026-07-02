@@ -4,10 +4,12 @@
 
 using UnityEngine;
 
-public class HealthIALandUnicornio : HealthCombat
+public class HealthIALandUnicornio : HealthIALand
 {
     [Header("Unicornio - Health Config")]
     public GameObject deathParticle;
+    public GameObject healParticle;
+    public GameObject shieldParticle;
 
     protected override void Awake()
     {
@@ -17,15 +19,12 @@ public class HealthIALandUnicornio : HealthCombat
 
     public override void LoadComponent()
     {
-        // Stats del unicornio
         MaxHealth = 150f;
-        MaxArmor = 30f;
+        MaxArmor = 50f;
 
-        // Clasificaci�n
         typeAgent = TypeAgent.Unicornio;
         _Unity = UnitSC.Unicornio;
 
-        // Inicializaci�n base
         base.LoadComponent();
     }
 
@@ -40,9 +39,20 @@ public class HealthIALandUnicornio : HealthCombat
 
         // Ejecuta l�gica base
         base.Death();
+    }
 
-        // NPC pasivo ? solo se desactiva
-        Desactive();
+    public override void Heal(float amount)
+    {
+        base.Heal(amount);
+        if (healParticle != null)
+            Destroy(Instantiate(healParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
+    }
+
+    public override void AddArmor(float amount)
+    {
+        base.AddArmor(amount);
+        if (shieldParticle != null)
+            Destroy(Instantiate(shieldParticle, transform.position + Vector3.up, Quaternion.identity, transform), 5f);
     }
 
     // ?? DANO ?????????????????????????????????????????????

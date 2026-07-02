@@ -7,16 +7,20 @@ using UnityEngine.AI;
 
 public class AICharacterVehicleLandUnicorn : AICharacterVehicleLand
 {
-    private float _defaultSpeed;
+    public float _defaultSpeed;
+    public float _cautiousSpeed;
 
     public override void LoadComponent()
     {
         base.LoadComponent();
-        if (agent != null)      // OK: agent viene de AICharacterVehicle
+        if (agent != null)
+        {
             _defaultSpeed = agent.speed;
+            _cautiousSpeed = _defaultSpeed / 2f;
+        }    
     }
 
-    public bool Flee(Transform enemy, float fleeDistance, float sampleRadius)
+    public override bool Flee(Transform enemy, float fleeDistance, float sampleRadius)
     {
         if (enemy == null) return false;
 
@@ -27,17 +31,17 @@ public class AICharacterVehicleLandUnicorn : AICharacterVehicleLand
         if (NavMesh.SamplePosition(desiredPosition, out hit, sampleRadius, NavMesh.AllAreas))
         {
             ResetSpeed();
-            MoveTo(hit.position);   // OK: viene de AICharacterVehicle
+            MoveTo(hit.position);
             return true;
         }
         return false;
     }
 
-    public void MoveCautiously(Vector3 destination, float cautiousSpeed = 1.5f)
+    public void MoveCautiously(Vector3 destination)
     {
         if (agent != null)
-            agent.speed = cautiousSpeed;
-        MoveTo(destination);    // OK: viene de AICharacterVehicle
+            agent.speed = _cautiousSpeed;
+        MoveTo(destination);    
     }
 
     public void ResetSpeed()

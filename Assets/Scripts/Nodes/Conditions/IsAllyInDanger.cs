@@ -4,7 +4,7 @@ using UnityEngine;
 [TaskCategory("BosqueEncantado/Condition")]
 public class IsAllyInDanger : ConditionNode
 {
-    public float healthPercentThreshold = 50f;
+    public float healthPercentThreshold = 100f;
 
     public override TaskStatus OnUpdate()
     {

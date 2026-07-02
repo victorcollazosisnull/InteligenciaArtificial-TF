@@ -1,29 +1,28 @@
-﻿// AICharacterVehicleLandHada.cs
-// FIX: hereda de AICharacterVehicleLand (no de AICharacterActionLand).
-// Es un script de MOVIMIENTO del Hada, no de acciones.
-// StopMoving() y MoveTo() vienen de AICharacterVehicle.
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AICharacterVehicleLandHada : AICharacterVehicleLand
 {
-    private int protectionRange = 5; // Rango de protección en unidades
-    private HealthIALandHada healthHada;
+    private float _defaultSpeed;
 
     public override void LoadComponent()
     {
         base.LoadComponent();
-        healthHada = GetComponent<HealthIALandHada>();
+        if (agent != null)
+            _defaultSpeed = agent.speed;
     }
 
-    public bool IntentarProtegerAliado(HealthBase ally)
+    public override bool Flee(Transform enemy, float fleeDistance, float sampleRadius)
     {
-        if (ally == null || healthHada == null) return false;
+        if (enemy == null) return false;
 
-        float distance = Vector3.Distance(transform.position, ally.transform.position);
-        if (distance <= protectionRange)
+        Vector3 dir = (transform.position - enemy.position).normalized;
+        Vector3 desiredPosition = transform.position + dir * fleeDistance;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(desiredPosition, out hit, sampleRadius, NavMesh.AllAreas))
         {
-            StopMoving();  
-            Debug.Log($"[Hada] Protegiendo a {ally.name} con un escudo m�gico!");
+            MoveTo(hit.position);
             return true;
         }
         return false;
