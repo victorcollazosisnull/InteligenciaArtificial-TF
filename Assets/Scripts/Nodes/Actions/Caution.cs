@@ -6,7 +6,6 @@ using UnityEngine;
 public class Caution : ActionNode
 {
     public SharedVector3 targetPosition;
-    public float cautiousSpeed = 1.5f;
     public float stopDistance = 4.5f;
 
     private AICharacterVehicleLandUnicorn _unicorn;
@@ -39,7 +38,7 @@ public class Caution : ActionNode
             return TaskStatus.Success;
         }
 
-        _unicorn.MoveCautiously(destination, cautiousSpeed);
+        _unicorn.MoveCautiously(destination);
         return TaskStatus.Running;
     }
 }
