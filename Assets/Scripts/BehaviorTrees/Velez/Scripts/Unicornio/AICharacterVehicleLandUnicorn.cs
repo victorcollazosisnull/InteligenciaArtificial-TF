@@ -31,7 +31,7 @@ public class AICharacterVehicleLandUnicorn : AICharacterVehicleLand
         if (NavMesh.SamplePosition(desiredPosition, out hit, sampleRadius, NavMesh.AllAreas))
         {
             ResetSpeed();
-            MoveTo(hit.position);   
+            MoveTo(hit.position);
             return true;
         }
         return false;

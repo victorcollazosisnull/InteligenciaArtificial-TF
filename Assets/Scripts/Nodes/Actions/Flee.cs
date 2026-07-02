@@ -1,6 +1,4 @@
 // Flee.cs
-// Delega la huida al metodo virtual Flee() de AICharacterVehicleLand,
-// permitiendo que cada NPC (Unicornio, Hada, etc.) sobrescriba su comportamiento.
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 

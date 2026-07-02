@@ -20,7 +20,7 @@ public class AICharacterVehicleLandDuende : AICharacterVehicleLand
         NavMeshHit hit;
         if (NavMesh.SamplePosition(desiredPosition, out hit, sampleRadius, NavMesh.AllAreas))
         {
-            MoveTo(hit.position);  
+            MoveTo(hit.position);
             return true;
         }
         return false;
