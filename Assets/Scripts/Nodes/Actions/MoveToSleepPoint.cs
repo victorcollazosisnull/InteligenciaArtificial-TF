@@ -1,8 +1,6 @@
 // MoveToSleepPoint.cs
-// FIX: usa SharedTransform en vez de Transform publico.
-// SharedTransform permite asignar el punto de la cueva desde
-// las variables del BehaviorTree en el GameObject (no en el asset),
-// evitando el error de referencias de escena en assets reutilizables.
+// Mueve al Orco a la cueva de noche y activa la animacion de dormir.
+// Cuando amanece (Abort Type Both), OnEnd() desactiva la animacion.
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
@@ -12,9 +10,16 @@ public class MoveToSleepPoint : ActionNode
 {
     // Variable Shared del BehaviorTree apuntando al punto de la cueva.
     public SharedTransform sleepPoint;
-
     public float stopDistance = 1f;
+
     private bool _isSleeping;
+    private NPCAnimator _npcAnimator;
+
+    public override void OnAwake()
+    {
+        base.OnAwake();
+        _npcAnimator = gameObject.GetComponentInChildren<NPCAnimator>();
+    }
 
     public override void OnStart()
     {
@@ -25,7 +30,8 @@ public class MoveToSleepPoint : ActionNode
 
     public override TaskStatus OnUpdate()
     {
-        if (sleepPoint.Value == null || _AIVehicleLand == null) return TaskStatus.Failure;
+        if (sleepPoint.Value == null || _AIVehicleLand == null)
+            return TaskStatus.Failure;
 
         if (!_isSleeping)
         {
@@ -34,7 +40,9 @@ public class MoveToSleepPoint : ActionNode
             {
                 _AIVehicleLand.StopMoving();
                 _isSleeping = true;
-                Debug.Log($"[{gameObject.name}] llegó a la cueva, durmiendo.");
+                // Activa animacion de dormir
+                if (_npcAnimator != null) _npcAnimator.TriggerSleep();
+                Debug.Log($"[{gameObject.name}] durmiendo en la cueva.");
             }
         }
 
@@ -43,6 +51,8 @@ public class MoveToSleepPoint : ActionNode
 
     public override void OnEnd()
     {
+        // Llamado cuando amanece (Abort Type Both interrumpe esta rama)
+        if (_npcAnimator != null) _npcAnimator.WakeUp();
         Debug.Log($"[{gameObject.name}] despertó.");
     }
 }

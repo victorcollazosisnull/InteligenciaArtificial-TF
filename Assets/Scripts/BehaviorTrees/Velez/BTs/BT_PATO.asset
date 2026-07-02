@@ -33,11 +33,11 @@ MonoBehaviour:
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-197.3383,126.430664)"},"ID":14,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-67.3383,126.430664)"},"ID":15,"Name":"Find
         Food","Instant":true,"SinglesearchRadius":20,"TypeAgentfoodFor":"Pato"},{"Type":"MoveToFood","NodeData":{"Offset":"(62.6617,126.430664)"},"ID":16,"Name":"Move
-        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":17,"Name":"Eat
+        To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(192.6617,126.430664)"},"ID":17,"Name":"Eat
         Food","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(984.7303,166.605453)"},"ID":18,"Name":"Movimiento","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-105,160)"},"ID":19,"Name":"Moverse
         en bandada","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsNearFlock","NodeData":{"Offset":"(-45.8506241,136.780212)"},"ID":20,"Name":"Is
         Near Flock","Instant":true},{"Type":"FlockMove","NodeData":{"Offset":"(94.1495361,136.780212)"},"ID":21,"Name":"Flock
-        Move","Instant":true,"SingleneighborRadius":3,"SingleseparationWeight":1.5,"SinglealignmentWeight":1,"SinglecohesionWeight":1}]},{"Type":"Patrol","NodeData":{"Offset":"(101.905518,180.952454)"},"ID":22,"Name":"Patrol","Instant":true,"SinglepatrolRadius":15}]}]}}'
+        Move","Instant":true,"SingleneighborRadius":3,"SingleseparationWeight":1.5,"SinglealignmentWeight":1,"SinglecohesionWeight":1}]},{"Type":"Patrol","NodeData":{"Offset":"(101.905518,180.952454)"},"ID":22,"Name":"Patrol","Instant":true}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

@@ -1,6 +1,5 @@
-// NPCAnimator.cs
+﻿// NPCAnimator.cs
 // Conecta el estado del NPC con el Animator y las armas (WeaponSwitcher).
-// Se pone en el hijo que tiene el mesh.
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +8,7 @@ public class NPCAnimator : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     private HealthBase health;
-    private WeaponSwitcher weaponSwitcher; // solo el Cazador lo tiene
+    private WeaponSwitcher weaponSwitcher;
 
     void Awake()
     {
@@ -30,7 +29,7 @@ public class NPCAnimator : MonoBehaviour
             animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
-    // ?? Generico (Orco, Duende) ??????????????????????????
+    // ── Generico (Orco, Duende) ──────────────────────────
     public void TriggerAttack()
     {
         animator.SetBool("IsAttacking", true);
@@ -40,11 +39,10 @@ public class NPCAnimator : MonoBehaviour
     {
         animator.SetBool("IsAttacking", false);
         animator.SetBool("IsRanged", false);
-        // Oculta ambas armas al terminar el ataque
         if (weaponSwitcher != null) weaponSwitcher.HideAll();
     }
 
-    // ?? Cazador melee ????????????????????????????????????
+    // ── Cazador melee ────────────────────────────────────
     public void TriggerMeleeAttack()
     {
         if (weaponSwitcher != null) weaponSwitcher.SetMelee();
@@ -52,19 +50,22 @@ public class NPCAnimator : MonoBehaviour
         animator.SetBool("IsAttacking", true);
     }
 
-    // ?? Cazador ranged ???????????????????????????????????
+    // ── Cazador ranged ───────────────────────────────────
     public void TriggerRangedAttack()
     {
         if (weaponSwitcher != null) weaponSwitcher.SetBallesta();
         animator.SetBool("IsRanged", true);
         animator.SetBool("IsAttacking", true);
     }
-    public void CharacterEating()
+
+    // ── Dormir (Orco) ────────────────────────────────────
+    public void TriggerSleep()
     {
-        animator.SetBool("IsEating", true);
+        animator.SetBool("IsSleeping", true);
     }
-    public void StopEating()
+
+    public void WakeUp()
     {
-        animator.SetBool("IsEating", false);
+        animator.SetBool("IsSleeping", false);
     }
 }

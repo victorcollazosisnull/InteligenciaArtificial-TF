@@ -28,7 +28,12 @@ MonoBehaviour:
         Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-192.433609,121.216171)"},"ID":8,"Name":"Ally
         Visible","Instant":true},{"Type":"SelfHasNoArmor","NodeData":{"Offset":"(3.3556385,121.216171)"},"ID":9,"Name":"Self
         Has No Armor","Instant":true},{"Type":"FollowTarget","NodeData":{"Offset":"(215.460739,113.722412)"},"ID":10,"Name":"Follow
-        Target","Instant":true,"SinglefollowTime":30,"SinglestopDistance":2}]},{"Type":"Patrol","NodeData":{"Offset":"(601.786865,169.166626)"},"ID":11,"Name":"Patrol","Instant":true}]}}'
+        Target","Instant":true,"SinglefollowTime":30,"SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(834.8159,191.346985)"},"ID":11,"Name":"Tiene
+        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-177.53772,116.641113)"},"ID":12,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-62.83191,116.641113)"},"ID":13,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":20,"TypeAgentfoodFor":"Unicornio"},{"Type":"MoveToFood","NodeData":{"Offset":"(51.8740234,116.641113)"},"ID":14,"Name":"Move
+        To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(166.579956,116.641113)"},"ID":15,"Name":"Eat
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1131.19873,169.166626)"},"ID":16,"Name":"Patrol","Instant":true}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

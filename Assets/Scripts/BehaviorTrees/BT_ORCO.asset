@@ -25,7 +25,7 @@ MonoBehaviour:
         Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(83.16524,129.761185)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-362.359955,200.014771)"},"ID":5,"Name":"Es
         de noche \u2192 dormir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsNight","NodeData":{"Offset":"(-111.805222,133.672852)"},"ID":6,"Name":"Is
         Night","Instant":true},{"Type":"MoveToSleepPoint","NodeData":{"Offset":"(98.7785339,134.953)"},"ID":7,"Name":"Move
-        To Sleep Point","Instant":true,"SharedTransformsleepPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true,"TransformmValue":0},"SinglestopDistance":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(18.9513054,200.091187)"},"ID":8,"Name":"(Ataque
+        To Sleep Point","Instant":true,"SharedTransformsleepPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true},"SinglestopDistance":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(18.9513054,200.091187)"},"ID":8,"Name":"(Ataque
         unificado)","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-140,130)"},"ID":9,"Name":"Enemy
         Visible","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(97.45203,129.091187)"},"ID":10,"Name":"Selector
         (Ver NPCs)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-213.298523,172.450867)"},"ID":11,"Name":"Ve
@@ -42,16 +42,14 @@ MonoBehaviour:
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":23,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":24,"Name":"Find
         Food","Instant":true,"SinglesearchRadius":50,"TypeAgentfoodFor":"Orco"},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":25,"Name":"Move
-        To Food","Instant":true},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":26,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1221.38489,197.204712)"},"ID":27,"Name":"Patrol","Instant":true,"SinglepatrolRadius":10}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true,"TransformmValue":1}]}'
+        To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":26,"Name":"Eat
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1221.38489,197.204712)"},"ID":27,"Name":"Patrol","Instant":true}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
-        unityObjects:
-        - {fileID: 0}
-        - {fileID: 0}
+        unityObjects: []
         byteData: 
         byteDataArray: 
       Version: 1.7.13
