@@ -1337,6 +1337,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5742443310160148707, guid: 4676bf0502606404489e65d4392fb12d, type: 3}
+      propertyPath: mBehaviorSource.mTaskData.Version
+      value: 1.7.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742443310160148707, guid: 4676bf0502606404489e65d4392fb12d, type: 3}
+      propertyPath: mBehaviorSource.mTaskData.JSONSerialization
+      value: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true}]}'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1747,9 +1755,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7462117114349271857, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 12800
+      objectReference: {fileID: 0}
     - target: {fileID: 7931627182545172057, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355264923608867284, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.254239
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355264923608867284, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.815463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355264923608867284, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.23684593
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355264923608867284, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9715473
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355264923608867284, guid: 47aa9cf2dd677b249afa83c193e050eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -152.599
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6568,6 +6600,10 @@ PrefabInstance:
     - target: {fileID: 1651888902911746763, guid: be59cc7386d47d740aec781fdb5ed69f, type: 3}
       propertyPath: m_Name
       value: IA_Unicornio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917759992045297875, guid: be59cc7386d47d740aec781fdb5ed69f, type: 3}
+      propertyPath: MaxHealth
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7722131153492805852, guid: be59cc7386d47d740aec781fdb5ed69f, type: 3}
       propertyPath: m_LocalPosition.x

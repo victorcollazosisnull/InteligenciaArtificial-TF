@@ -20,10 +20,15 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-276.77417,193.975281)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
-        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.48705864,181.074249)"},"ID":4,"Name":"Detectar
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-495.523956,193.975281)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
+        Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-214.262634,181.074249)"},"ID":4,"Name":"Detectar
         enemigo","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-118.834656,135.4703)"},"ID":5,"Name":"Enemy
-        Visible","Instant":true},{"Type":"FuzzyDecision","NodeData":{"Offset":"(102.50795,129.669434)"},"ID":6,"Name":"Fuzzy Decision","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5,"SinglestrafeRadius":6,"SingleminStrafeRadius":4,"SinglemaxStrafeRadius":8,"SingleattackRange":2.5,"SingleattackCooldown":1.5}]},{"Type":"Patrol","NodeData":{"Offset":"(256.62735,169.166626)"},"ID":26,"Name":"Patrol","Instant":true}]}}'
+        Visible","Instant":true},{"Type":"FuzzyDecision","NodeData":{"Offset":"(102.50795,129.669434)"},"ID":6,"Name":"Fuzzy
+        Decision","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5,"SinglestrafeRadius":6,"SingleminStrafeRadius":4,"SinglemaxStrafeRadius":8,"SingleattackRange":2.5,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(253.151535,192.118317)"},"ID":7,"Name":"Seguir
+        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-192.433609,121.216171)"},"ID":8,"Name":"Ally
+        Visible","Instant":true},{"Type":"SelfHasNoArmor","NodeData":{"Offset":"(3.3556385,121.216171)"},"ID":9,"Name":"Self
+        Has No Armor","Instant":true},{"Type":"FollowTarget","NodeData":{"Offset":"(215.460739,113.722412)"},"ID":10,"Name":"Follow
+        Target","Instant":true,"SinglefollowTime":30,"SinglestopDistance":2}]},{"Type":"Patrol","NodeData":{"Offset":"(601.786865,169.166626)"},"ID":11,"Name":"Patrol","Instant":true}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
