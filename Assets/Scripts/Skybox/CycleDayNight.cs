@@ -27,6 +27,13 @@ public class CycleDayNight : MonoBehaviour
 
     private float timer;
 
+    // --- NUEVO: Inicialización del tiempo al iniciar el juego ---
+    private void Start()
+    {
+        // Forzamos a que empiece al 35% del día (justo en pleno día, pasando el amanecer)
+        timer = cycleDuration * 0.35f;
+    }
+
     private void Update()
     {
         // 1. Avanzar el tiempo (0.0 a 1.0)

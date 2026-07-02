@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -555,7 +555,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -671,7 +671,7 @@ MonoBehaviour:
   diaZenith: {r: 0, g: 0.5, b: 1, a: 1}
   diaHorizon: {r: 0.5093005, g: 0.7530584, b: 0.990566, a: 1}
   diaFog: {r: 0.7, g: 0.85, b: 1, a: 1}
-  diaIntensidadLuz: 1
+  diaIntensidadLuz: 0.6
   atardecerZenith: {r: 0.2, g: 0.15, b: 0.35, a: 1}
   atardecerHorizon: {r: 0.95, g: 0.5, b: 0.2, a: 1}
   atardecerFog: {r: 0.8, g: 0.4, b: 0.3, a: 1}
