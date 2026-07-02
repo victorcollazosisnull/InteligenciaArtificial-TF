@@ -23,17 +23,22 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-495.523956,193.975281)"},"ID":2,"Name":"Muerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsDeadNode","NodeData":{"Offset":"(4.73687172,133.986115)"},"ID":3,"Name":"Is
         Dead Node","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-214.262634,181.074249)"},"ID":4,"Name":"Detectar
         enemigo","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-118.834656,135.4703)"},"ID":5,"Name":"Enemy
-        Visible","Instant":true},{"Type":"FuzzyDecision","NodeData":{"Offset":"(102.50795,129.669434)"},"ID":6,"Name":"Fuzzy
-        Decision","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5,"SinglestrafeRadius":6,"SingleminStrafeRadius":4,"SinglemaxStrafeRadius":8,"SingleattackRange":2.5,"SingleattackCooldown":1.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(253.151535,192.118317)"},"ID":7,"Name":"Seguir
-        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-192.433609,121.216171)"},"ID":8,"Name":"Ally
-        Visible","Instant":true},{"Type":"SelfHasNoArmor","NodeData":{"Offset":"(3.3556385,121.216171)"},"ID":9,"Name":"Self
-        Has No Armor","Instant":true},{"Type":"FollowTarget","NodeData":{"Offset":"(215.460739,113.722412)"},"ID":10,"Name":"Follow
-        Target","Instant":true,"SinglefollowTime":30,"SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(834.8159,191.346985)"},"ID":11,"Name":"Tiene
-        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-177.53772,116.641113)"},"ID":12,"Name":"Is
-        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-62.83191,116.641113)"},"ID":13,"Name":"Find
-        Food","Instant":true,"SinglesearchRadius":20,"TypeAgentfoodFor":"Unicornio"},{"Type":"MoveToFood","NodeData":{"Offset":"(51.8740234,116.641113)"},"ID":14,"Name":"Move
-        To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(166.579956,116.641113)"},"ID":15,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1131.19873,169.166626)"},"ID":16,"Name":"Patrol","Instant":true}]}}'
+        Visible","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(102.50795,129.669434)"},"ID":6,"Name":"Estado
+        Combate","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-372.045349,203.809479)"},"ID":7,"Name":"Huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsUnicornHuir","NodeData":{"Offset":"(-112.857819,140)"},"ID":8,"Name":"Is
+        Unicorn Huir","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(82.3801,140)"},"ID":9,"Name":"Flee","Instant":true,"SinglefleeDistance":15,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.17773628,197.241364)"},"ID":10,"Name":"Cautela","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsUnicornCautela","NodeData":{"Offset":"(-100.345055,140)"},"ID":11,"Name":"Is
+        Unicorn Cautela","Instant":true},{"Type":"Caution","NodeData":{"Offset":"(98.99796,140)"},"ID":12,"Name":"Caution","Instant":true,"SinglestrafeRadius":6,"SingleminStrafeRadius":4,"SinglemaxStrafeRadius":8}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(468.286835,202.727234)"},"ID":13,"Name":"Atacar","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsUnicornAtacar","NodeData":{"Offset":"(-155.454468,140)"},"ID":14,"Name":"Is
+        Unicorn Atacar","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(12.7272377,140)"},"ID":15,"Name":"Move
+        To Target","Instant":true,"TargetFactiontargetToFollow":"Enemy","SinglestopDistance":2},{"Type":"AttackTarget","NodeData":{"Offset":"(180.908936,140)"},"ID":16,"Name":"Attack
+        Target","Instant":true,"SingleattackCooldown":1.5,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(253.151535,192.118317)"},"ID":17,"Name":"Seguir
+        Aliado","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-192.433609,121.216171)"},"ID":18,"Name":"Ally
+        Visible","Instant":true},{"Type":"SelfHasNoArmor","NodeData":{"Offset":"(3.3556385,121.216171)"},"ID":19,"Name":"Self
+        Has No Armor","Instant":true},{"Type":"FollowTarget","NodeData":{"Offset":"(215.460739,113.722412)"},"ID":20,"Name":"Follow
+        Target","Instant":true,"SinglefollowTime":30,"SinglestopDistance":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(834.8159,191.346985)"},"ID":21,"Name":"Tiene
+        hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-177.53772,116.641113)"},"ID":22,"Name":"Is
+        Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-62.83191,116.641113)"},"ID":23,"Name":"Find
+        Food","Instant":true,"SinglesearchRadius":20,"TypeAgentfoodFor":"Unicornio"},{"Type":"MoveToFood","NodeData":{"Offset":"(51.8740234,116.641113)"},"ID":24,"Name":"Move
+        To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(166.579956,116.641113)"},"ID":25,"Name":"Eat
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1131.19873,169.166626)"},"ID":26,"Name":"Patrol","Instant":true}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

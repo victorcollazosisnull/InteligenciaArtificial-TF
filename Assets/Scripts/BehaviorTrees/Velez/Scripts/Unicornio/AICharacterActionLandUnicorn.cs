@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AICharacterActionLandUnicorn : AICharacterCombatLand
 {
+    public enum Estado { Huir, Cautela, Atacar }
+
     [Header("Unicornio - Stats de Combate")]
     public float attackDamage = 25f;
     public float attackRange = 2.5f;
@@ -16,6 +18,7 @@ public class AICharacterActionLandUnicorn : AICharacterCombatLand
     private Blackboard _blackboard;
     private HealthBase _health;
     [SerializeField] private float _tendenciaActual = 50f;
+    [SerializeField] private Estado _estadoActual = Estado.Cautela;
 
     protected override void Awake()
     {
@@ -46,9 +49,18 @@ public class AICharacterActionLandUnicorn : AICharacterCombatLand
 
         _tendenciaActual = _fuzzySystem.Evaluate(healthPercent, enemyHealth, distance, nearbyAllies);
         ApplyFuzzyValues(_tendenciaActual);
+        _estadoActual = GetEstadoFromTendencia(_tendenciaActual);
     }
 
     public float GetTendenciaActual() => _tendenciaActual;
+    public Estado GetEstadoActual() => _estadoActual;
+
+    private static Estado GetEstadoFromTendencia(float tendency)
+    {
+        if (tendency < 40f) return Estado.Huir;
+        if (tendency <= 60f) return Estado.Cautela;
+        return Estado.Atacar;
+    }
 
     private void ApplyFuzzyValues(float tendency)
     {
