@@ -20,12 +20,12 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(366.201477,179.450867)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.79833984,142.178116)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-667.48584,202.3548)"},"ID":2,"Name":"En
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(404.662964,179.450867)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.79833984,142.178116)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-859.7933,202.3548)"},"ID":2,"Name":"En
         peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-88.91201,127.508614)"},"ID":3,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(83.16524,129.761185)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-362.359955,200.014771)"},"ID":5,"Name":"Es
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(83.16524,129.761185)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":20,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-554.667358,200.014771)"},"ID":5,"Name":"Es
         de noche \u2192 dormir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsNight","NodeData":{"Offset":"(-111.805222,133.672852)"},"ID":6,"Name":"Is
         Night","Instant":true},{"Type":"MoveToSleepPoint","NodeData":{"Offset":"(98.7785339,134.953)"},"ID":7,"Name":"Move
-        To Sleep Point","Instant":true,"SharedTransformsleepPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true},"SinglestopDistance":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(18.9513054,200.091187)"},"ID":8,"Name":"(Ataque
+        To Sleep Point","Instant":true,"SharedTransformsleepPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true},"SinglestopDistance":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-173.35611,200.091187)"},"ID":8,"Name":"(Ataque
         unificado)","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"EnemyVisible","NodeData":{"Offset":"(-140,130)"},"ID":9,"Name":"Enemy
         Visible","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(97.45203,129.091187)"},"ID":10,"Name":"Selector
         (Ver NPCs)","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-213.298523,172.450867)"},"ID":11,"Name":"Ve
@@ -35,15 +35,15 @@ MonoBehaviour:
         Target","Instant":true,"SingleattackCooldown":3,"SinglemeleeRange":2.5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(184.701477,173.450867)"},"ID":16,"Name":"Ve
         enemy \u2192 atacar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsTargetInAttackRange","NodeData":{"Offset":"(-90,150)"},"ID":17,"Name":"Is
         Target In Attack Range","Instant":true,"SingleattackRange":2.5},{"Type":"AttackTarget","NodeData":{"Offset":"(90,150)"},"ID":18,"Name":"Attack
-        Target","Instant":true,"SingleattackCooldown":3,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(393.558868,199.314423)"},"ID":19,"Name":"Buscar
+        Target","Instant":true,"SingleattackCooldown":3,"SinglemeleeRange":2.5}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(201.251434,199.314423)"},"ID":19,"Name":"Buscar
         ultima posicion conocida","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"HasTarget","NodeData":{"Offset":"(-105.503479,128.376846)"},"ID":20,"Name":"Has
         Target","Instant":true},{"Type":"MoveToLastKnownPosition","NodeData":{"Offset":"(103.871468,128.376846)"},"ID":21,"Name":"Move
-        To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(889.275452,196.998871)"},"ID":22,"Name":"Tiene
+        To Last Known Position","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(696.968,196.998871)"},"ID":22,"Name":"Tiene
         hambre \u2192 comer","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsHungry","NodeData":{"Offset":"(-208.263321,134.786331)"},"ID":23,"Name":"Is
         Hungry","Instant":true},{"Type":"FindFood","NodeData":{"Offset":"(-80.60381,133.722473)"},"ID":24,"Name":"Find
         Food","Instant":true,"SinglesearchRadius":50,"TypeAgentfoodFor":"Orco"},{"Type":"MoveToFood","NodeData":{"Offset":"(54.4471,131.294128)"},"ID":25,"Name":"Move
         To Food","Instant":true,"SinglestopDistance":2},{"Type":"EatFood","NodeData":{"Offset":"(184.078247,134.183044)"},"ID":26,"Name":"Eat
-        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1221.38489,197.204712)"},"ID":27,"Name":"Patrol","Instant":true}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true}]}'
+        Food","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(1029.07776,197.204712)"},"ID":27,"Name":"Patrol","Instant":true}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"OrcoSleepPoint","IsShared":true}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

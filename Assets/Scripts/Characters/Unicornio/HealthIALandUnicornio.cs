@@ -31,13 +31,13 @@ public class HealthIALandUnicornio : HealthIALand
     // ?? MUERTE ???????????????????????????????????????????
     public override void Death()
     {
-        // Part�culas opcionales
         if (deathParticle != null)
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
+        {
+            GameObject effect = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
 
-        Debug.Log("[Unicornio] muri�.");
-
-        // Ejecuta l�gica base
+        Debug.Log("[Unicornio] murió.");
         base.Death();
     }
 

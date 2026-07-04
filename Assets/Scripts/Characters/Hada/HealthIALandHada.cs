@@ -26,13 +26,15 @@ public class HealthIALandHada : HealthNoCombat
     // ?? MUERTE ???????????????????????????????????????????
     public override void Death()
     {
-        // Efecto visual opcional
         if (deathParticle != null)
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
+        {
+            // Guardamos la referencia en una variable temporal
+            GameObject effect = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            // Lo destruimos automáticamente después de 5 segundos
+            Destroy(effect, 5f);
+        }
 
-        Debug.Log("[Hada] muri�.");
-
-        // Ejecuta l�gica base
+        Debug.Log("[Hada] murió.");
         base.Death();
     }
 

@@ -19,7 +19,10 @@ public class HealthIALandDuende : HealthIALand
     public override void Death()
     {
         if (poofParticle != null)
-            Instantiate(poofParticle, transform.position, Quaternion.identity);
+        {
+            GameObject effect = Instantiate(poofParticle, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
 
         Debug.Log("[Duende] fue cazado.");
         base.Death();

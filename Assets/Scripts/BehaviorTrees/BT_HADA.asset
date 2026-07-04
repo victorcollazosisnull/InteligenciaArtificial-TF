@@ -20,19 +20,19 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-460.06012,186.513)"},"ID":2,"Name":"En
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(477.557281,301.2661)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-2.44271469,121.266113)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-695.354065,186.513)"},"ID":2,"Name":"En
         peligro \u2192 huir","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"IsDangerHealthNode","NodeData":{"Offset":"(-61.85033,126.815308)"},"ID":3,"Name":"Is
-        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-25.96222,202.307678)"},"ID":5,"Name":"Aliado
+        Danger Health Node","Instant":true},{"Type":"Flee","NodeData":{"Offset":"(69.68817,126.815308)"},"ID":4,"Name":"Flee","Instant":true,"SinglefleeDistance":10,"SinglesampleRadius":5}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-261.256134,202.307678)"},"ID":5,"Name":"Aliado
         herido \u2192 curar","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-200,130)"},"ID":6,"Name":"Ally
         Visible","Instant":true},{"Type":"IsAllyInDanger","NodeData":{"Offset":"(-76.8967,131.008774)"},"ID":7,"Name":"Is
         Ally In Danger","Instant":true,"SinglehealthPercentThreshold":100},{"Type":"MoveToTarget","NodeData":{"Offset":"(40,130)"},"ID":8,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2},{"Type":"HealAlly","NodeData":{"Offset":"(160,130)"},"ID":9,"Name":"Heal
-        Ally","Instant":true},{"Type":"Patrol","NodeData":{"Offset":"(266.4286,135.6349)"},"ID":10,"Name":"Patrol","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(591.2464,202.307678)"},"ID":11,"Name":"Aliado
+        Ally","Instant":true},{"Type":"Patrol","NodeData":{"Offset":"(266.4286,135.6349)"},"ID":10,"Name":"Patrol","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(355.952454,202.307678)"},"ID":11,"Name":"Aliado
         sin escudo \u2192 proteger","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"AllyVisible","NodeData":{"Offset":"(-208.694138,130)"},"ID":12,"Name":"Ally
         Visible","Instant":true},{"Type":"IsAllyShieldable","NodeData":{"Offset":"(-88.6941757,130)"},"ID":13,"Name":"Is
         Ally Shieldable","Instant":true},{"Type":"MoveToTarget","NodeData":{"Offset":"(31.3058224,130)"},"ID":14,"Name":"Move
         To Target","Instant":true,"TargetFactiontargetToFollow":"Ally","SinglestopDistance":2},{"Type":"CastShield","NodeData":{"Offset":"(145.52504,130)"},"ID":15,"Name":"Cast
-        Shield","Instant":true},{"Type":"Patrol","NodeData":{"Offset":"(252.777588,134.9997)"},"ID":16,"Name":"Patrol","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(998.1826,204.230774)"},"ID":17,"Name":"Patrol","Instant":true}]}}'
+        Shield","Instant":true},{"Type":"Patrol","NodeData":{"Offset":"(252.777588,134.9997)"},"ID":16,"Name":"Patrol","Instant":true}]},{"Type":"Patrol","NodeData":{"Offset":"(762.8887,204.230774)"},"ID":17,"Name":"Patrol","Instant":true}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

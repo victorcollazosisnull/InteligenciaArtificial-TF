@@ -19,7 +19,10 @@ public class HealthIALandCazador : HealthIALand
     public override void Death()
     {
         if (deathParticle != null)
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
+        {
+            GameObject effect = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
 
         Debug.Log("[Cazador] fue derrotado.");
         base.Death();

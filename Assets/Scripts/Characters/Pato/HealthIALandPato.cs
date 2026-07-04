@@ -34,13 +34,13 @@ public class HealthIALandPato : HealthNoCombat
     // ?? MUERTE ???????????????????????????????????????????
     public override void Death()
     {
-        // Efecto visual opcional
         if (deathParticle != null)
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
+        {
+            GameObject effect = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
 
-        Debug.Log("[Pato] muri�.");
-
-        // Ejecuta l�gica base
+        Debug.Log("[Pato] murió.");
         base.Death();
     }
 

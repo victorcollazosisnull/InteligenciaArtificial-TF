@@ -17,7 +17,10 @@ public class HealthIALandOrco : HealthIALand
     public override void Death()
     {
         if (bloodParticle != null)
-            Instantiate(bloodParticle, transform.position, Quaternion.identity);
+        {
+            GameObject effect = Instantiate(bloodParticle, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
 
         Debug.Log("[Orco] murio.");
         base.Death();
